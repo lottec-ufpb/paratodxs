@@ -1,0 +1,102 @@
+%\triangleright\bullet\leftthreetimes% !TeX root = ./forallxyyc.tex
+\documentclass[openany,oneside,10pt]{memoir}
+
+\usepackage{forallxyyc}
+
+\usepackage[absolute,overlay]{textpos}
+
+
+% set stock & paper size with narrow margins
+
+\setstocksize{8in}{5in}
+
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+% let's calculate the line length for 65 characters in \normalfont
+
+\setlxvchars
+
+% set the size of the type block to golden ratio calculated width
+
+\settypeblocksize{*}{1.05\lxvchars}{1.62}
+
+% set spine and and edge margin
+
+\setlrmargins{*}{*}{1}
+\setulmargins{.6in}{*}{*}
+\setheaderspaces{*}{*}{1}
+
+\checkandfixthelayout
+
+\definecolor{lyallpink}{RGB}{222,31,149}
+\colorlet{leadbeater}{lyallpink}
+\colorlet{dkleadbeater}{lyallpink!80!black}
+\colorlet{ltleadbeater}{lyallpink!50}
+\colorlet{vltleadbeater}{lyallpink!3}
+
+\input{forallx-yyc-glossario}
+
+\begin{document}
+
+% discard page after cover
+%\AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+\midsloppy
+
+% Cover Page
+
+\thispagestyle{empty}
+
+\begin{textblock*}{\stockwidth}(0in,3.5in)
+  \noindent\includegraphics{assets/forallx-coverart-screen.pdf}
+\end{textblock*}
+
+% make front cover
+\begin{textblock*}{0in}(0in,0in)
+
+
+  \noindent\hfill
+  \begin{minipage}[b][\stockheight][s]{.9\stockwidth}
+    \begin{raggedleft}
+      \vspace*{1.7cm}
+      \hfill
+     \sffamily\fontsize{46pt}{0pt}\selectfont %V2
+      \color{lyallpink}
+      %\textbf{Para Tod{\fontsize{56pt}{0pt}\selectfont\rmfamily\hspace{-2pt}\textit{x}}\hspace{-3.5pt}s} %V1
+      \textbf{Para Tod{\fontsize{56pt}{0pt}\selectfont\rmfamily\hspace{-3.5pt}\textit{x}}\hspace{-1.5pt}s}                   
+      \vskip.5cm
+      
+      %\definecolor{beaublue}{rgb}{0.33, 0.33, 0.33}
+      \color{black}
+      \vspace*{1.3cm}
+      \sffamily
+      \fontsize{24pt}{23pt}\selectfont
+      \textbf{uma introdução à\\ lógica formal}
+      
+      \vfill
+      \fontsize{11pt}{14pt}\selectfont
+      %\color{white}
+     % \textbf{P.~D. Magnus}\\
+      %\textbf{Tim Button}\\
+      %\textit{with additions by}\\
+      %\textbf{J.~Robert Loftis}\\
+      %\textbf{Robert Trueman}\\
+      %\textit{remixed and revised by}\\
+      %\textbf{Aaron Thomas-Bolduc}\\ \textbf{Richard Zach}\par
+      %\vspace{1cm}
+      %\textbf{\forallxversion}\par
+      %\textbf{\today}\par
+     % \vspace{1cm}
+    \end{raggedleft}
+  \end{minipage}
+  \hspace*{1cm}
+\end{textblock*}
+\ 
+\newpage
+\color{black}
+\setlength{\barlength}{0pt} % no bar next to chapter headings in ebook
+
+\input{forallx-yyc-content}
+
+\end{document}

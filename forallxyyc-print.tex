@@ -1,0 +1,77 @@
+%\pdfminorversion=3
+
+\documentclass[openany,10pt]{memoir}
+
+% Carrega pacote feito para o livro de lógica
+\usepackage{forallxyyc}
+
+\colorlet{leadbeater}{black}
+\colorlet{dkleadbeater}{black}
+\colorlet{ltleadbeater}{black!50}
+\colorlet{vltleadbeater}{black!3}
+
+\hypersetup{hidelinks}
+
+\makeevenhead{leadbeater}{\color{leadbeater}\sffamily\bfseries\thepage}{}
+             {\small\sffamily\color{leadbeater}\leftmark}
+\makeoddhead{leadbeater}{\small\sffamily\color{leadbeater}\rightmark}{}
+            {\color{leadbeater}\sffamily\bfseries\thepage}
+
+%\usepackage[acronym,xindy,nonumberlist,toc,style=index]{glossaries}
+
+% Configurações do pacote hyperref
+%\hypersetup{hidelinks}
+
+% (Daniel - 2021-05-20)--comentei o blue. Penso nesta versão toda black e na versão "de tela" com cores. 
+%\hypersetup{colorlinks=true,linkcolor=blue} % opção extra: linktocpage
+
+
+
+% set stock & paper size to Quarto
+
+\setstocksize{24.589cm}{18.91cm}
+
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+% let's calculate the line length for 65 characters in \normalfont
+
+\setlxvchars
+
+% set the size of the type block to golden ratio calculated width
+
+\settypeblocksize{*}{1.05\lxvchars}{1.62}
+
+% set spine and and edge margin
+
+\setlrmargins{*}{*}{1.3}
+\setulmargins{90pt}{*}{*}
+\setheaderspaces{*}{*}{1} 
+
+\checkandfixthelayout
+
+\colorlet{leadbeater}{black}
+\colorlet{dkleadbeater}{black}
+\colorlet{ltleadbeater}{black!50}
+\colorlet{vltleadbeater}{black!3}
+
+%\usepackage[x-1a]{pdfx} Opção não permite hiperlinks. Pensar sobre a necessidade.
+
+\makeevenhead{leadbeater}{\color{leadbeater}\sffamily\bfseries\thepage}{}
+             {\small\sffamily\color{leadbeater}\leftmark}
+\makeoddhead{leadbeater}{\small\sffamily\color{leadbeater}\rightmark}{}
+            {\color{leadbeater}\sffamily\bfseries\thepage}
+
+\input{forallx-yyc-glossario}
+
+\begin{document}
+
+% discard page after cover
+%\AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+\midsloppy
+
+
+\input{forallx-yyc-content}
+
+\end{document}
