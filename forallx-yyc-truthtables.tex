@@ -1,6 +1,6 @@
 %!TEX root = forallxyyc.tex
 \normalsize
-\part{Tabelas de verdade}
+\part{Tabelas de verdade e árvores de refutação}
 \label{ch.TruthTables}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
@@ -2149,3 +2149,845 @@ Use tabelas de verdade completas ou parciais (conforme o que for apropriado) par
 \item $A \eif B$, $\enot B \eor A\therefore A \eiff B$ % valid
 \end{earg}
 
+
+
+\chapter{Árvores de refutação ou tablôs}\label{s:TruthTrees}
+
+
+\section{Introdução}
+
+Mesmo considerando os atalhos apresentados acima, a avaliação de tautologicidade ou de validade  para casos relativamente simples continua sendo sobremodo trabalhosa e entediante.
+Considere o seguinte argumento  $A \eand (B \eand C), \enot(B \eand D) \therefore \enot D$. 
+Se fôssemos verificar a sua validade por meio de tabelas de verdade, teríamos que fazer uma tabela com 16 linhas. 
+Contudo, sua validade/invalidade pode ser verificada de uma forma muito mais simples: pelo método das árvores de refutação ou tablôs. 
+Trata-se de um método de demonstração indireto, em que, para se demonstrar algo, se assume o oposto.
+Assim, para avaliar um argumento, tentaremos de forma sistemática refutá-lo.
+Caso consigamos, o argumento é inválido; caso não consigamos, o argumento é válido. 
+
+\paragraph{Exemplo 1.}
+
+Antes de mais detalhes, vejamos como ficaria uma árvore de refutação para o argumento  $A \eand (B \eand C), \enot(B \eand D) \therefore \enot D$.
+O primeiro passo é assumir que todas as premissas e a negação da conclusão são verdadeiras. 
+Para isso, as listamos em sequência.
+As linhas são numeradas para facilitar a referência:
+
+\begin{center}
+\begin{tableau}
+	{
+	}
+	[A \eand (B \eand C), just={premissa}
+	[\enot(B \eand D), just={premissa}
+	[\enot \enot D, just={negação da conclusão}]]]
+\end{tableau}
+\end{center}
+
+Em seguida, extraímos consequências com base na tabela de verdade dos operadores lógicos.
+
+Considere a fórmula na primeira linha. Lembre-se que só existe uma situação em que $A \eand (B \eand C)$ é verdadeira em uma tabela de verdade: quando ambas $A$ e $B \eand C$ também são.
+Assim, uma vez que temos que $A \eand (B \eand C)$ é verdadeira, podemos inferir que  ambas $A$ e $B \eand C$ também são.
+Essa inferência é representada no esquema acima ao adicionarmos estas fórmulas na sequência e indicarmos à direita qual a linha da fórmula que foi usada para obtê-las.
+A fórmula $A \eand (B \eand C)$  é marcada com $\checkmark$  para indicar que já a utilizamos e não há por que extrair consequências dela novamente.
+O resultado será:
+
+\begin{center}
+\begin{tableau}
+	{
+	}
+	[A \eand (B \eand C), just={premissa}, checked
+	[\enot(B \eand D), just={premissa}
+	[\enot \enot D, just={negação da conclusão}
+	[A, just={obtida pela linha 1}
+	[B \eand C, just={obtida pela linha 1}]]]]]
+\end{tableau}
+\end{center}
+
+Prosseguimos agora extraindo consequências das demais fórmulas.
+Tomemos a fórmula $B \eand C$ da linha 5 (poderíamos também ter escolhido a linha 2).
+Do mesmo modo que o caso anterior, podemos inferir que ambas $B$ e $C$ são verdadeiras.
+Analogamente, representamos isso adicionando $B$ e $C$ sequencialmente à nossa construção e marcamos $B \eand C$ com um $\checkmark$:
+\begin{center}
+\begin{tableau}
+	{
+	}
+	[A \eand (B \eand C), just={premissa}, checked
+	[\enot(B \eand D), just={premissa}
+	[\enot \enot D, just={negação da conclusão}
+	[A, just={obtida pela linha 1}
+	[B \eand C, just={obtida pela linha 1}, checked
+	[B, just={obtida pela linha 5}
+	[C, just={obtida pela linha 5}]]]]]]]
+\end{tableau}
+\end{center}
+
+
+Pela tabela de verdade, a fórmula $\enot \enot D$ é verdadeira se e somente se $D$ é verdadeira.  Assim, já que na linha 3 temos $\enot \enot D$,  podemos inferir $D$. De modo análogo aos casos anteriores, representamos isso na construção e marcamos a fórmula $\enot \enot D$:
+
+\begin{center}
+\begin{tableau}
+	{
+	}
+	[A \eand (B \eand C), just={premissa}, checked
+	[\enot(B \eand D), just={premissa}
+	[\enot \enot D, just={negação da conclusão}, checked
+	[A, just={obtida pela linha 1}
+	[B \eand C, just={obtida pela linha 1}, checked
+	[B, just={obtida pela linha 5}
+	[C, just={obtida pela linha 5}
+	[D, just={obtida pela linha 3}]]]]]]]]
+\end{tableau}
+\end{center}
+
+
+
+Considere agora $\enot(B \eand D)$.  
+Pela tabela de verdade, quando $\enot(B \eand D)$ é verdadeira, podemos inferir que ou $B$ é falsa ou $D$ é falsa.
+Dito de outro modo, podemos inferir que ou $\enot B$ é verdadeira, ou $\enot D$ é verdadeira.
+Dado que a partir da verdade de $\enot(B \eand D)$ extraímos que existem duas alternativas possíveis, esta inferência será apresentada na nossa construção como uma bifurcação. Como nos casos anteriores, assinalamos que já extraímos consequências de $\enot(B \eand D)$  com $\checkmark$:
+\begin{center}
+\begin{tableau}
+	{
+	}
+	[A \eand (B \eand C), just={premissa}, checked
+	[\enot(B \eand D), just={premissa}, checked
+	[\enot \enot D, just={negação da conclusão}, checked
+	[A, just={obtida pela linha 1}
+	[B \eand C, just={obtida pela linha 1}, checked
+	[B, just={obtida pela linha 5}
+	[C, just={obtida pela linha 5}
+	[D, just={obtida pela linha 3}
+		[\enot B, just={obtida pela linha 2}]
+		[\enot D, just={obtida pela linha 2}]]]]]]]]]
+\end{tableau}
+\end{center}
+
+
+Agora todas as fórmulas moleculares já tiveram suas consequências extraídas, exceto negações de fórmulas atômicas. 
+A construção obtida tem uma estrutura similar a de uma árvore de cabeça para baixo, daí o seu nome de árvore de refutação.
+
+Diremos que esta árvore tem dois ``ramos'': ambos partindo da fórmula $A \eand (B \eand C)$, um deles terminando na fórmula $\enot B$, o outro terminando em $\enot D$.
+Note que as linhas 6 e 9 do ramo esquerdo contém formulas contraditórias entre si: $B$ e $\enot B$.
+O mesmo ocorre com as linhas 8 e 9 do ramo direito, com as fórmulas $D$ e $\enot D$.
+Quando isso ocorre, dizemos que o ramo está fechado.
+Caso contrário, o ramo está aberto.
+Para indicar que um ramo está fechado, o marcamos com $\otimes$, juntamente com o número das linhas que contém contradições:
+
+\begin{figure}[h!]
+\begin{center}
+\begin{tableau}
+	{
+	}
+	[A \eand (B \eand C), just={premissa}, checked
+	[\enot(B \eand D), just={premissa}, checked
+	[\enot \enot D, just={negação da conclusão}, checked
+	[A, just={obtida pela linha 1}
+	[B \eand C, just={obtida pela linha 1}, checked
+	[B, just={obtida pela linha 5}
+	[C, just={obtida pela linha 5}
+	[D, just={obtida pela linha 3}
+		[\enot B, just={obtida pela linha 2}, close={:!uuu, !c}]
+		[\enot D, just={obtida pela linha 2}, close={:!u,!c}]]]]]]]]]
+\end{tableau}
+\end{center}
+	\caption{Árvore de refutação para $A \eand (B \eand C), \enot(B \eand D) \therefore \enot D$.}
+	\label{truth.trees.ex.1}
+\end{figure}
+
+Por causa do princípio de não-contradição, ramos fechados representam situações que se revelam impossíveis.
+Uma vez que todos os ramos da árvore estão fechados, não é possível que $A \eand (B \eand C)$ e $\enot(B \eand D)$ sejam verdadeiras juntamente com $\enot \enot D$, isto é, não é possível que as premissas sejam verdadeiras e a conclusão falsa.
+Nossa tentativa de refutação fracassou.
+Sendo assim, o argumento é válido.
+
+\paragraph{Exemplo 2.}
+Consideremos mais um caso de argumento válido: $\enot(A \eand \enot B), \enot(B \eand C), C \therefore \enot A$.
+Listamos as premissas e a negação da conclusão:
+
+\begin{center}
+	\begin{tableau}
+		{
+		}
+		[\enot(A \eand \enot B), just=premissa, 
+		[\enot(B \eand C), just=premissa, 
+		[C, just=premissa, 
+		[\enot \enot A, just={negação da conclusão}]]]]
+	\end{tableau}
+\end{center}
+
+Agora inferimos $A$ a partir de $\enot \enot A$, na linha 4, e marcamos com $\checkmark$. 
+Em seguida, como no exemplo acima, de $\enot(A \eand \enot B)$, podemos introduzir uma bifurcação contendo por um lado $\enot A$, e por outro  $\enot \enot B$.
+Feita a bifurcação, marcamos $\enot(A \eand \enot B)$ com $\checkmark$:
+
+\begin{center}
+	\begin{tableau}
+		{
+		}
+		[\enot(A \eand \enot B), just=premissa, checked
+		[\enot(B \eand C), just=premissa, 
+		[C, just=premissa, 
+		[\enot \enot A, just={negação da conclusão}, checked
+		[A, just={obtida pela linha 4}
+			[\enot A, just={obtida pela linha 1}]
+			[\enot \enot B, just={obtida pela linha 1}]]]]]]
+	\end{tableau}
+\end{center}
+
+
+Repare que o ramo esquerdo contém uma contradição. Marcamos então que ele está fechado e em seguida a fórmula $\enot \enot B$ do ramo direito é desenvolvida e marcada:
+\begin{center}
+	\begin{tableau}
+		{
+		}
+		[\enot(A \eand \enot B), just=premissa, checked
+		[\enot(B \eand C), just=premissa, 
+		[C, just=premissa, 
+		[\enot \enot A, just={negação da conclusão}, checked
+		[A, just={obtida pela linha 4}
+			[\enot A, just={obtida pela linha 1}, close={:!u, !c}]
+			[\enot \enot B, just={obtida pela linha 1}, checked
+			[B, just={obtida pela linha 6, direita}]]]]]]]
+	\end{tableau}
+\end{center}
+
+Agora só resta a fórmula $\enot(B \eand C)$ para ser desenvolvida. 
+Se uma fórmula é comum a vários ramos da árvore, deveríamos introduzir suas consequências em todos. Contudo, neste caso, o ramo esquerdo já está fechado, e nenhum desenvolvimento posterior mudará isso.
+Daí, desenvolveremos as consequências de $\enot(B \eand C)$ apenas no ramo direito.
+
+\begin{center}
+	\begin{tableau}
+		{
+		}
+		[\enot(A \eand \enot B), just=premissa, checked
+		[\enot(B \eand C), just=premissa, checked
+		[C, just=premissa, 
+		[\enot \enot A, just={negação da conclusão}, checked
+		[A, just={obtida pela linha 4}
+			[\enot A, just={obtida pela linha 1}, close={:!u, !c}]
+			[\enot \enot B, just={obtida pela linha 1}, checked
+			[B, just={obtida pela linha 6, direita}			
+				[\enot B, just={obtida pela linha 2}]
+				[\enot C, just={obtida pela linha 2}]]]]]]]]
+	\end{tableau}
+\end{center}
+
+Marcamos agora as contradições que surgiram nos dois ramos da direita:
+
+\begin{figure}[h!]
+\begin{center}
+	\begin{tableau}
+		{
+		}
+		[\enot(A \eand \enot B), just=premissa, checked
+		[\enot(B \eand C), just=premissa, checked
+		[C, just=premissa, 
+		[\enot \enot A, just={negação da conclusão}, checked
+		[A, just={obtida pela linha 4}
+			[\enot A, just={obtida pela linha 1}, close={:!u, !c}]
+			[\enot \enot B, just={obtida pela linha 1}, checked
+			[B, just={obtida pela linha 6, direita}			
+				[\enot B, just={obtida pela linha 2}, close={:!u, !c}]
+				[\enot C, just={obtida pela linha 2}, close={:!uuuuu, !c}]]]]]]]]
+	\end{tableau}
+\end{center}
+	\caption{Árvore de refutação para  $\enot(A \eand \enot B), \enot(B \eand C), C \therefore \enot A$}
+	\label{truth.trees.ex.2}
+\end{figure}
+
+Uma vez que todos os ramos fecham na árvore de refutação acima, o argumento em questão é válido.
+Caso houvesse pelo menos um ramo aberto, ele seria inválido, como é o caso de $\enot B, \enot(B \eand D) \therefore D$:
+
+\begin{center}
+\begin{tableau}
+	{
+	}
+	[\enot(B \eand D), just={premissa}, checked
+	[\enot B, just={premissa}
+	[\enot D, just={negação da conclusão}
+		[\enot B, just={obtida pela linha 1}]
+		[\enot D, just={obtida pela linha 1}]]]]
+\end{tableau}
+\end{center}
+
+Neste caso, não existem contradições entre fórmulas em nenhum dos ramos.
+Isso significa que é possível que as premissas sejam verdadeiras e a conclusão falsa.
+Os ramos abertos na árvore são formas de representar as situações possíveis em que isso ocorreria.
+
+\section{As regras de inferência}
+
+Na construção das árvores acima foram feitas algumas inferências, envolvendo conjunção, negação de conjunção e dupla negação.
+Em seguida as regras que regem essas inferências serão explicitadas, detalhadas e nomeadas, de modo que, quando certa fórmula for adicionada na árvore, será indicado explicitamente na coluna direita a regra utilizada para obtê-la, e a linha da fórmula à qual a regra foi aplicada.
+
+Para cada operador haverá uma regra de inferência para quando ele aparece como operador principal e para a negação de fórmulas o contendo como operador principal.
+Antes de expor as regras, alguns conceitos utilizados acima serão revistos e o conceito de árvore completa será introduzido: 
+
+\factoidbox{
+
+	\begin{itemize}
+		\item Um \emph{ramo} em uma árvore de refutação é o conjunto das fórmulas pertencentes a um caminho partindo das fórmulas iniciais até alguma extremidade da árvore.
+		\item Quando algum ramo da árvore conter uma fórmula $\meta{A}$ e sua negação $\enot \meta{A}$, dizemos que o ramo está \emph{fechado}, de outro modo, o ramo está \emph{aberto}.
+		\item Uma árvore está \emph{completa} quando todas suas fórmulas moleculares (exceto negações de fórmulas atômicas) estiverem marcadas com $\checkmark$.
+		\item Quando todos os ramos de uma árvore completa para um argumento estão fechados, isso significa que o \emph{argumento é válido}. Por outro lado, quando pelo menos algum ramo de uma árvore completa está aberto, o \emph{argumento é inválido.}
+	\end{itemize}
+}
+
+A seguinte regra de inferência foi utilizada no Exemplo \ref{truth.trees.ex.1} acima, para extrair as linhas 4 e 5 a partir da linha 1, e as linhas 6 e 7 a partir da linha 5:
+
+\factoidbox{
+	Se em determinado ponto da árvore aparece uma fórmula do tipo $\meta{A} \eand \meta{B}$ que não esteja marcada com $\checkmark$, incrementa-se \emph{todos} os ramos abertos \emph{que contém a fórmula} com:
+\begin{center}
+\begin{tableau}
+	{}
+	[\meta{A}, no line no
+	[\meta{B}, no line no]]
+\end{tableau}
+\end{center}
+e marcar a fórmula $\meta{A} \eand \meta{B}$ com $\checkmark$.}
+
+Essa regra será denominada simplesmente por \emph{conj} e será referida abreviadamente por:
+
+\factoidbox{
+\begin{center}
+\begin{tableau}
+	{}
+	[\meta{A} \eand \meta{B}, no line no, checked
+	[\meta{A}, no line no
+	[\meta{B}, no line no]]]
+\end{tableau}
+\end{center}
+}
+
+
+A regra utilizada no Exemplo \ref{truth.trees.ex.1}  para inferir a bifurcação a partir da linha 2 foi a seguinte, a ser denominada \emph{negconj}:
+
+\factoidbox{
+	Se em determinado ponto da árvore aparece uma fórmula do tipo $\enot(\meta{A} \eand \meta{B})$ que não esteja marcada com $\checkmark$, incrementa-se \emph{todos} os ramos abertos \emph{que contém a fórmula} com:
+\begin{center}
+\begin{tableau}
+	{}
+[,no line no
+	[\enot\meta{A}, no line no]
+	[\enot\meta{B}, no line no]]
+\end{tableau}
+\end{center}
+}
+
+A regra \emph{negconj} será abreviada assim:
+
+\factoidbox{
+\center
+\begin{tableau}
+	{}
+[\enot(\meta{A} \eand \meta{B}),no line no, checked
+	[\enot\meta{A}, no line no]
+	[\enot\meta{B}, no line no]]
+\end{tableau}
+}
+Para os demais operadores, as regras têm a estrutura geral similar às expostas acima, e serão dadas agora apenas de forma abreviada. 
+
+Consideremos a disjunção. 
+Como no caso da conjunção, há duas regras: uma para $\meta{A} \eor \meta{B}$, e outra para $\enot(\meta{A} \eor \meta{B})$. 
+A primeira regra captura a ideia de que se uma disjunção é verdadeira, pelo menos um de seus membros é verdadeiro.
+A existência de alternativas é então representada pela bifurcação do ramo. 
+Ela será denominada \emph{disj}:
+
+\factoidbox{
+\center
+\begin{tableau}
+	{}
+[\meta{A} \eor \meta{B},no line no, checked
+	[\meta{A}, no line no]
+	[\meta{B}, no line no]]
+\end{tableau}
+}
+
+A segunda regra captura a ideia de que se a negação de uma disjunção é verdadeira, então ambos seus membros é falso.
+Ela será denominada \emph{negdisj}:
+
+\factoidbox{
+\center
+\begin{tableau}
+	{}
+[\enot(\meta{A} \eor \meta{B}),no line no, checked
+	[\enot\meta{A}, no line no
+	[\enot\meta{B}, no line no]]]
+\end{tableau}
+}
+
+Consideremos o condicional.
+Para entender melhor as regras para o condicional, há que se recordar que $\meta{A} \eif \meta{B}$ é um condicional material e é, portanto, equivalente a $\enot\meta{A} \eor \meta{B}$.
+Assim, as regras para $\meta{A} \eif \meta{B}$ e $\enot(\meta{A} \eif \meta{B})$ serão similares àquelas para disjunção.
+A regra para $\meta{A} \eif \meta{B}$ (que será chamada de \emph{cond}) é:
+
+\factoidbox{
+\center
+\begin{tableau}
+	{}
+	[\meta{A} \eif \meta{B},no line no, checked
+		[\enot\meta{A}, no line no]
+		[\meta{B}, no line no]]
+\end{tableau}
+}
+
+Já a regra para  $\enot(\meta{A} \eif \meta{B})$ (que será chamada de \emph{negcond}) é:
+
+\factoidbox{
+\center
+\begin{tableau}
+	{}
+	[\enot(\meta{A} \eif \meta{B}), no line no, checked
+	[\meta{A}, no line no
+	[\enot\meta{B}, no line no]]]
+\end{tableau}
+}
+
+Consideremos o bicondicional.
+As regras para $\meta{A} \eiff \meta{B}$ e para $\enot(\meta{A} \eiff \meta{B})$ ambas envolvem mais de uma possibilidade, assim, ambas bifurcam.
+Como vemos na tabela de verdade para $\eiff$, quando $\meta{A} \eiff \meta{B}$ é verdadeiro, há duas possibilidades: ou ambos componentes são verdadeiros, ou ambos são falsos.
+Assim, a regra para $\meta{A} \eiff \meta{B}$, a ser denominada por \emph{bicond}, é:
+
+\factoidbox{
+\center
+	\begin{tableau}
+		{}
+		[\meta{A} \eiff \meta{B}, no line no, checked
+		[\meta{A}, no line no
+			[\meta{B}, no line no]]	
+		[\enot\meta{A}, no line no
+			[\enot\meta{B}, no line no]]]
+	\end{tableau}
+}
+
+Já quando  $\enot(\meta{A} \eiff \meta{B})$ é verdadeiro, o primeiro componente é verdadeiro e segundo é falso, ou vice-versa.
+Asim, a regra para $\enot(\meta{A} \eiff \meta{B})$, a ser denominada \emph{negbicond}, é:
+
+\factoidbox{
+\center
+	\begin{tableau}
+		{}
+		[\enot(\meta{A} \eiff \meta{B}), no line no, checked
+		[\meta{A}, no line no
+			[\enot\meta{B}, no line no]]
+		[\enot\meta{A}, no line no
+			[\meta{B}, no line no]]]
+	\end{tableau}
+}
+
+Como foi mencionado acima, caso $\meta{A}$ seja atômica, não é necessário aplicar nenhuma regra para $\enot\meta{A}$.
+Para $\enot \enot \meta{A}$ a seguinte uma regra se aplica, que captura a ideia de que se é falso que $\meta{A}$ é falsa, então $\meta{A}$ é verdadeira.
+Essa regra será denominada \emph{dupneg}:
+
+\factoidbox{
+\center
+\begin{tableau}
+	{}
+[\enot \enot \meta{A}, no line no, checked
+	[\meta{A}, no line no]]
+\end{tableau}
+}
+
+Todas regras são apresentadas na figura \ref{regrtablos}, para facilitar a consulta.
+
+\begin{figure}[h]
+\begin{center}
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			\emph{conj}:
+
+		\begin{tableau}
+			{}
+			[\meta{A} \eand \meta{B}, no line no, checked
+			[\meta{A}, no line no
+			[\meta{B}, no line no]]]
+		\end{tableau}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+	\begin{center}
+			\emph{negconj}:
+
+		\begin{tableau}
+			{}
+			[\enot(\meta{A} \eand \meta{B}),no line no, checked
+			[\enot\meta{A}, no line no]
+			[\enot\meta{B}, no line no]]
+		\end{tableau}
+	\end{center}
+	\end{minipage}
+
+	\vspace{3mm}
+
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			\emph{disj}:
+
+		\begin{tableau}
+			{}
+			[\meta{A} \eor \meta{B},no line no, checked
+			[\meta{A}, no line no]
+			[\meta{B}, no line no]]
+		\end{tableau}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			\emph{negdisj}:
+
+		\begin{tableau}
+			{}
+			[\enot(\meta{A} \eor \meta{B}),no line no, checked
+			[\enot\meta{A}, no line no
+			[\enot\meta{B}, no line no]]]
+		\end{tableau}
+		\end{center}
+	\end{minipage}
+
+	\vspace{3mm}
+
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			\emph{cond}:
+
+		\begin{tableau}
+			{}
+			[\meta{A} \eif \meta{B},no line no, checked
+			[\enot\meta{A}, no line no]
+			[\meta{B}, no line no]]
+		\end{tableau}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			\emph{negcond}:
+
+		\begin{tableau}
+			{}
+			[\enot(\meta{A} \eif \meta{B}), no line no, checked
+			[\meta{A}, no line no
+			[\enot\meta{B}, no line no]]]
+		\end{tableau}
+		\end{center}
+	\end{minipage}
+
+	\vspace{3mm}
+
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			\emph{bicond}:
+		\begin{tableau}
+			{}
+			[\meta{A} \eiff \meta{B}, no line no, checked
+				[\meta{A}, no line no
+					[\meta{B}, no line no]]
+				[\enot\meta{A}, no line no
+					[\enot\meta{B}, no line no]]]
+		\end{tableau}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			\emph{negbicond}:
+		\begin{tableau}
+			{}
+			[\enot(\meta{A} \eiff \meta{B}), no line no, checked
+			[\meta{A}, no line no
+				[\enot\meta{B}, no line no]]	
+			[\enot\meta{A}, no line no
+				[\meta{B}, no line no]]]
+		\end{tableau}
+		\end{center}
+	\end{minipage}
+
+	\vspace{3mm}
+		
+	\begin{center}
+		\emph{dupneg}:
+
+		\begin{tableau}
+			{}
+			[\enot \enot \meta{A}, no line no, checked
+			[\meta{A}, no line no]]
+		\end{tableau}
+	\end{center}
+
+\end{center}
+
+\caption{Regras para a construção das árvores de refutação para a lógica proposicional}
+\label{regrtablos}
+
+\end{figure}
+
+\section{Dicas para facilitar a construção de árvores de refutação}
+
+Quando vamos construir uma árvore de refutação para o argumento $\meta{A}_1,...,\meta{A}_n \therefore \meta{B}$, podemos extrair consequências de $\meta{A}_1,...,\meta{A}_n, \enot \meta{B}$ por meio das regras da figura \ref{regrtablos} em qualquer ordem.
+Isto é, podemos primeiro extrair as consequências de $\meta{A}_n$, depois de $\meta{A}_1$, depois de $\enot \meta{B}$, etc.
+Contudo, a construção será simplificada se forem extraídas primeiro as consequências daquelas sentenças cujas regras aplicáveis não criam bifurcações.
+
+Outro ponto importante para simplificar a construção é verificar se já existem ramos fechados a cada incremento da árvore, como foi feito no Exemplo \ref{truth.trees.ex.2}.
+Caso existam, fechá-los e proceder o desenvolvimento apenas nos ramos abertos.
+
+As regras especificadas na figura \ref{regrtablos} funcionam de modo simétrico, tanto com respeito às bifurcações, quanto com respeito à ordem de adição das fórmulas.
+Assim sendo, é possível desenvolver $\meta{A} \eand \meta{B}$ aplicando \emph{conj}, colocando $\meta{A}$ seguido de $\meta{B}$ ou vice-versa.
+De modo similar, é podemos desenvolver $\meta{A} \eor \meta{B}$ aplicando \emph{disj}, fazendo uma bifurcação em que $\meta{A}$ apareça na esquerda ou na direita.
+
+Por fim, convém ressaltar novamente que há que se adicionar as consequências da fórmula em \emph{todos} os ramos abertos contendo aquela fórmula e \emph{apenas nesses}, sob pena de obter resultados incorretos.
+
+\section{Mais alguns exemplos de árvores de refutação para argumentos.}
+
+O argumento $((A \eand B) \eor C), (C \land D) \therefore B$ é inválido, como demonstra a árvore completa para ele abaixo com um ramo aberto:
+
+\begin{center}
+\begin{tableau}
+	{
+	%	to prove={ ((A \eand B) \eor C), (C \land D) \therefore B}
+}
+	[(A \eand B) \eor C), just=premissa, checked
+	[(C \land D), just=premissa, checked
+	[\enot B, just={neg. da conclusão}
+	[C, just={\emph{conj}, 2}
+	[D	, just={\emph{conj}, 2}
+		[A \eand B, just={\emph{disj}, 1}, checked
+			[A, just={\emph{conj}, 6}
+			[B, just={\emph{conj}, 6}, close={:!uuuuu, !c}]]]
+		[C, just={\emph{disj}, 1}]
+		]]]]]
+\end{tableau}
+\end{center}
+
+Já o argumento $A \eand (B \eor C) \therefore (A \eand B) \eor (A \eand C)$ é válido:
+
+\begin{center}
+\begin{tableau}
+	{
+	%to prove={A \eand (B \eor C) \therefore (A \eand B) \eor (A \eand C)}
+}
+	[A \eand (B \eor C), just={premissa}, checked
+	[\enot((A \eand B) \eor (A \eand C)), just={neg. da conclusão}, checked
+	[A, just={\emph{conj}, 1}
+	[B \eor C, just={\emph{conj}, 1}, checked
+	[\enot (A \eand B), just={\emph{negdisj}, 2}, checked
+	[\enot (A \eand C), just={\emph{negdisj}, 2}, checked
+		[B, just={\emph{disj}, 4}
+			[\enot A, just={\emph{negconj}, 5}, close={:!uuuuu, !c}]
+			[\enot B, just={\emph{negconj}, 5}, close={:!u, !c}]]
+		[C, just={\emph{disj}, 4}
+			[\enot A, just={\emph{negconj}, 5}, close={:!uuuuu, !c}]
+			[\enot B, just={\emph{negconj}, 5}
+				[\enot A, just={\emph{negconj}, 6}, close={:!uuuuu, !c}]
+				[\enot C, just={\emph{negconj}, 6}, close={:!uuu, !c}]]]
+		]]]]]]
+\end{tableau}
+\end{center}
+
+\section{A extração de contraexemplos a partir de árvores de refutação}
+
+Considere a árvore de refutação abaixo para o argumento $(A \eand B) \eor (C \eand D) \therefore (A \eand C) \eor (B \eand D)$:
+\begin{center}
+\begin{tableau}
+	{
+	%	to prove={(A \eand B) \eor (C \eand D) \therefore (A \eand C) \eor (B \eand D)}
+	}
+	[(A \eand B) \eor (C \eand D), just={premissa}, checked
+	[\enot((A \eand C) \eor (B \eand D)), just={neg. da conclusão}, checked
+	[\enot(A \eand C), just={\emph{negdisj}, 2}, checked
+	[\enot(B \eand D), just={\emph{negdisj}, 2}, checked
+		[A \eand B, just={\emph{disj}, 1}, checked
+			[A, just={\emph{conj}, 5}
+			[B, just={\emph{conj}, 5}
+			[\enot A, just={\emph{negconj}, 3}, close={:!uu, !c}]
+			[\enot C, just={\emph{negconj}, 3}
+				[\enot B, just={\emph{negconj}, 4}, close={:!uu, !c}]
+				[\enot D, just={\emph{negconj}, 4}]]]]]
+		[C \eand D, just={\emph{disj}, 1}, checked
+			[C, just={\emph{conj}, 5}
+			[D, just={\emph{conj}, 5}
+				[\enot A, just={\emph{negconj}, 3}
+					[\enot B, just={\emph{negconj}, 4}]
+					[\enot D, just={\emph{negconj}, 4}, close={:!uu, !c}]]
+				[\enot C, just={\emph{negconj}, 3}, close={:!uu, !c}]]]]]]]]
+\end{tableau}
+\end{center}		
+Uma vez que existe pelo menos um ramo aberto e a árvore está completa, o argumento é inválido.
+
+A partir de uma árvore completa com pelo menos um ramo aberto, podemos extrair um contraexemplo para o argumento, isto é, uma valoração tal que faz a premissa verdadeira e a conclusão falsa. Para tanto, primeiro coletamos as fórmulas atômicas ou negações destas em um ramo aberto, \emph{e.g.} na árvore acima tomemos o ramo aberto da esquerda para a direita, então temos as fórmulas $\{\enot D, \enot C, A, B\}$.
+Depois definimos a valoração contraexemplo $v$ da seguinte maneira: se uma fórmula atômica aparece negada no ramo aberto, a valoração contraexemplo lhe atribuirá $F$, caso contrário, atribuirá $V$.
+Assim, para o ramo acima, teremos a seguinte valoração: $v(D)=F,\: v(C)=F,\: v(A)=V,\: v(B)=V$.
+Claramente $v$ torna $(A \eand B) \eor (C \eand D)$ verdadeira e $(A \eand C) \eor (B \eand D)$ falsa.
+
+\section{Utilizando as árvores para verificar outras propriedades e relações entre fórmulas}
+
+\paragraph{Verificação de tautologias, contradições e contingências}
+
+O método das árvores acima se aplica diretamente para verificar se uma fórmula $\meta{A}$ é uma tautologia.
+Para tanto, basta fazer uma árvore para $\enot\meta{A}$.
+Se todos os ramos estiverem fechados na árvore completa para $\enot\meta{A}$, então $\meta{A}$ é efetivamente uma tautologia.
+Caso exista pelo menos um ramo aberto, é possível definir uma valoração que faça $\meta{A}$ falsa, o que significa que $\meta{A}$ não é uma tautologia.
+
+Assim, $\enot(A \eif B) \eif \enot B$ é uma tautologia:
+
+\begin{center}
+\begin{tableau}
+	{
+	%	to prove={\enot(A \eif B) \eif \enot B}
+	}
+	[\enot(\enot(A \eif B) \eif \enot B), just={hipótese}, checked
+		[\enot(A \eif B), just={\emph{negcond}, 1}, checked
+		[\enot \enot B, just={\emph{negcond}, 1}
+		[B, just={\emph{dupneg}, 3}
+		[A, just={\emph{negcond}, 2}
+		[\enot B, just={\emph{negcond}, 2}, close={:!uu, !c}]]]]]]
+\end{tableau}
+\end{center}
+
+Também temos que $(A \eif (B \eif C)) \eif (B \eif (A \eif C))$ é uma tautologia:
+
+\begin{center}
+\begin{tableau}
+	{
+	%	to prove={(A \eif (B \eif C)) \eif (B \eif (A \eif C))}
+	}
+	[\enot((A \eif (B \eif C)) \eif (B \eif (A \eif C))), just={hipótese}, checked
+	[(A \eif (B \eif C)), just={\emph{negcond}, 1}, checked
+	[\enot (B \eif (A \eif C)), just={\emph{negcond}, 1}, checked
+	[B, just={\emph{negcond}, 3}
+	[\enot(A \eif C), just={\emph{negcond}, 3}, checked
+	[A, just={\emph{negcond}, 5}
+	[\enot C, just={\emph{negcond}, 5}
+		[\enot A, just={\emph{cond}, 2}, close={:!uu, !c}]
+		[B \eif C, just={\emph{cond}, 2}
+			[\enot B,  just={\emph{cond}, 9}, close={:!uuuuu, !c}]
+			[C, just={\emph{cond}, 9}, close={:!uuuu, !c}]]]]]]]]]
+\end{tableau}
+\end{center}
+
+Já $((A \eor B) \eand A) \eif B$ não é uma tautologia, pois existe pelo menos um ramo aberto na árvore completa para $\enot(((A \eor B) \eand A) \eif B)$.
+Isso implica que é possível definir uma valoração que não satisfaz $((A \eor B) \eand A) \eif B$.
+
+\begin{center}
+	\begin{tableau}
+		{
+		%	to prove={((A \eor B) \eand A) \eif B}
+		}
+		[\enot(((A \eor B) \eand A) \eif B), just={hipótese}, checked
+		[((A \eor B) \eand A), just={\emph{negcond}, 1}, checked
+		[\enot B, just={\emph{negcond}, 1}
+		[(A \eor B), just={\emph{conj}, 2}, checked
+		[A, just={\emph{conj}, 2}
+			[A, just={\emph{disj}, 4}]
+			[B, just={\emph{disj}, 4}, close={:!uuu, !c}]]]]]]
+	\end{tableau}
+\end{center}
+
+Também podemos usar as árvores de refutação método para verificar se dada fórmula $\meta{A}$ é uma contradição. 
+Para tanto, basta fazer uma árvore para $\meta{A}$.
+Se todos os ramos fecharem, $\meta{A}$ é uma contradição (e sua negação $\enot \meta{A}$ uma tautologia); caso contrário, é possível definir uma valoração que satisfaça $\meta{A}$, o que significa que $\meta{A}$ não é uma contradição.
+
+Por exemplo, a fórmula $(\enot Q \eand (P \eif Q)) \eand P$ é uma contradição, já que todos os ramos para ela fecham:
+
+\begin{center}
+\begin{tableau}
+	{
+		%to prove={(\enot Q \eand (P \eif Q)) \eand P}
+	}
+	[(\enot Q \eand (P \eif Q)) \eand P, just={hipótese}, checked
+	[\enot Q \eand (P \eif Q), just={\emph{conj}, 1}, checked
+	[P, just={\emph{conj}, 1}, checked
+	[\enot Q, just={\emph{conj}, 2}
+	[P \eif Q, just={\emph{conj}, 2}, checked
+		[\enot P, just={\emph{cond}, 4}, close={:!uuu, !c}]
+		[Q, just={\emph{cond}, 4}, close={:!uu, !c}]]]]]]
+\end{tableau}
+\end{center}
+
+Do mesmo modo,  $A \eiff \enot A$ é uma contradição:
+
+\begin{center}
+	\begin{tableau}
+		{
+		%	to prove={ A \eiff \enot A}
+		}
+		[A \eiff \enot A, just=hipótese, checked
+			[A, just={\emph{bicond}, 1}
+				[\enot A, just={\emph{bicond}, 1}, close={:!u, !c}]]
+			[\enot A, just={\emph{bicond}, 1}
+				[\enot \enot A, just={\emph{bicond}, 1}, checked
+				[A, just={\emph{dupneg}, 3}, close={:!uu, !c}]]]]
+	\end{tableau}
+\end{center}
+
+Contudo, isso não é o caso para $(A \eif \enot A)$:
+
+\begin{center}
+	\begin{tableau}
+		{
+	%		to prove={(A \eif \enot A)}
+		}
+		[A \eif \enot A, just=hipótese, checked
+		[A, just={\emph{cond}, 1}]
+		[\enot A, just={\emph{cond}, 1}]]
+	\end{tableau}
+\end{center}
+
+A fórmula $(A \eif \enot A)$ tampouco é uma tautologia:
+
+	\begin{center}
+	\begin{tableau}
+		{
+		%	to prove={(A \eif \enot A)}
+		}
+		[\enot(A \eif \enot A), just=hipótese, checked
+		[A, just={\emph{negcond}, 1}
+		[\enot \enot A, just={\emph{negcond}, 1}, checked
+		[A, just={\emph{dupneg}, 3}]]]]
+	\end{tableau}
+\end{center}
+
+Portanto, $(A \eif \enot A)$ é uma contingência. 
+Assim, para testar se uma fórmula $\meta{A}$ é uma contingência, há que se verificar se existem ramos abertos nas árvore para $\meta{A}$ e para $\enot\meta{A}$.
+
+\paragraph{Verificação de equivalências e (in)satisfação conjunta}
+
+Duas fórmulas $\meta{A}$ e $\meta{B}$ são logicamente equivalentes se e somente se $(\meta{A} \eiff \meta{B})$ for uma tautologia. 
+Assim, basta verificar a equivalência lógica, basta verificar se certa fórmula é uma tautologia.
+Analogamente,  $\meta{A}$ e $\meta{B}$ são logicamente equivalentes se e somente se $\meta{A} \therefore \meta{B}$ e $\meta{B} \therefore \meta{A}$.
+Desse modo, basta construir árvores de refutação para estes argumentos para provar ou refutar a sua equivalência.
+
+Tome as fórmulas $A \eor \enot B$ e $B \eif A$.
+Veremos que são equivalentes demonstrando que que $(A \eor \enot B) \eiff (B \eif A)$ é uma tautologia.
+A partir da linha 4 na árvore abaixo, as justificativas da inclusão das fórmulas no ramo da esquerda aparecem à esquerda de `;', \emph{mutatis mutandis} para o ramo da direita.
+
+	\begin{center}
+		\begin{tableau}
+			{
+			%	to prove={(A \eor \enot B) \eiff (B \eif A)}
+			}
+			[\enot((A \eor \enot B) \eiff (B \eif A)), just=hipótese, checked
+				[A \eor \enot B, just={\emph{negbicond}, 1}, checked
+				[\enot(B \eif A), just={\emph{negbicond}, 1}, checked
+					[B, just={\emph{negcond}, 3}
+					[\enot A, just={\emph{negcond}, 3}
+						[A, just={\emph{disj}, 2}, close={:!u, !c}]
+						[\enot B, just={\emph{disj}, 2}, close={:!uu, !c}]]]]]
+				[B \eif A, just={\emph{negbicond}, 1}, checked
+				[\enot(A \eor \enot B), just={\emph{negbicond}, 1}, checked
+				[\enot A, just={\emph{negdisj}, 3}
+					[\enot \enot B, just={\emph{negdisj}, 3}, checked
+					[B, just={\emph{dupneg}, 5}
+						[\enot B, just={\emph{cond}, 2}, close={:!u, !c}]
+						[A, just={\emph{cond}, 2}, close={:!uuu, !c}]]]]]]]
+		\end{tableau}
+	\end{center}
+
+Para verificar se $\meta{A}_1, ..., \meta{A}_n$ são conjuntamente (in)satisfazíveis, basta fazer uma árvore para $\meta{A}_1, ..., \meta{A}_n$. 
+Havendo ao menos um ramo aberto, elas são conjuntamente satisfazíveis, do contrário, são conjuntamente insatisfazíveis.
+
+\practiceproblems
+
+\problempart
+\label{pr.TT.truthtrees.args}
+Verifique se os argumentos a seguir são válidos, utilizando as árvores de refutação. Caso sejam inválidos, apresente uma valoração que seja um contraexemplo.
+\begin{earg}
+	\item $A \eand B, \enot C \eif \enot B, C \eif (E \eor D) \therefore \enot D \eif E$.
+	\item $A \eor (B \eor C) \therefore C \eor (A \eor B)$.
+	\item $A \eor (B \eand C) \therefore (A \eand B) \eor (A \eand C)$.
+	\item $A \eor (B \eand (C \eand D)) \therefore (A \eor B) \eand (A \eor (C \eand D))$.
+	\item $A \eif (B \eif C) \therefore (B \eif A) \eif (A \eif C)$.
+	\item $A \eif B, C \eif B, D \eiff A, C \eif (B \eand E) \therefore A \eiff C$.
+\end{earg}
