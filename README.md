@@ -1,5 +1,8 @@
 # ParaTodxs
 
+[![Build
+Status](https://github.com/lottec-ufpb/paratodxs/actions/workflows/main.yml/badge.svg)](https://github.com/lottec-ufpb/paratodxs/actions/workflows/main.yml)
+
 ## Descrição
 
 _ParaTodxs_ é um livro didático de introdução à lógica formal.
