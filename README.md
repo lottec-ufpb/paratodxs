@@ -10,6 +10,11 @@ Dentre os temas abordados está a lógica proposicional clássica, a lógica de 
 
 A versão mais recente em pdf pode ser encontrada [aqui](https://arquivos.pontofixo.net.br/index.php/s/R6T9gZFD72JbSzN).
 
+## LoTTec
+
+O livro _Paratodxs_ está sendo melhorado e adaptado pelos membros do grupo de pesquisa [LoTTec: Lógica -- Teorias e Técnicas](https://lottec.pontofixo.net.br) da Universidade Federal da Paraíba.
+
+
 ## Créditos e Licença
 
 _ParaTodxs_ é baseado no [_ParaTodxs: Natal_](https://github.com/Grupo-de-Estudos-em-Logica-da-UFRN/Para-Todxs-Natal), mantido pelo Grupo de Estudos em Lógica da UFRN, o qual, por sua vez, é baseado no [_Forall x: Calgary_](https://github.com/rzach/forallx-yyc), mantido por Richard Zach.
