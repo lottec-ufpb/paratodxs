@@ -892,13 +892,13 @@ comprova que `$\exists x\, \atom{S}{x}$' e `$\forall x\, \atom{S}{x}$' não são
 
 \section{Validade, sustentação e satisfação}
 Para testar a validade, a sustentação ou a satisfação, normalmente precisamos produzir interpretações capazes de determinam o valor de verdade de várias sentenças.
-Considere o seguinte argumento na LPO:
+Considere o seguinte forma argumentativa na LPO:
 \begin{earg}
 	\item[] $\exists x(\atom{G}{x} \eif \atom{G}{a})$
 	\item[\therefore ] $\exists x\, \atom{G}{x} \eif \atom{G}{a}$
 \end{earg}
 %$$\exists x(\atom{G}{x} \eif \atom{G}{a}) \therefore \exists x\, \atom{G}{x} \eif \atom{G}{a}$$
-Para mostrar que este argumento é inválido, precisamos encontrar uma interpretação na qual a premissa seja verdadeira, mas a conclusão seja falsa.
+Para mostrar que ela é inválida, precisamos encontrar uma interpretação na qual a premissa seja verdadeira, mas a conclusão seja falsa.
 A conclusão é um condicional; portanto, ela será falsa quando seu antecedente for verdadeiro e o consequente falso.
 Claramente, nosso domínio deve conter dois objetos, um que esteja na extensão de `$G$' e um que não esteja.
 Vamos tentar:
@@ -1007,7 +1007,7 @@ e
 		\item $\meta{A}_1$, $\meta{A}_2$, \dots, $\meta{A}_n$ não sustentam $\meta{C}$.
 		\item $\meta{A}_1$, $\meta{A}_2$, \dots, $\meta{A}_n$, $\enot \meta{C}$ são conjuntamente satisfatórias.
 	\end{ebullet}}
-Uma interpretação que refuta uma proposta, ou seja, que mostra que um argumento \emph{não} é válido, ou que uma sentença \emph{não} é uma validade (logicamente necessária), ou que um conjunto de sentenças \emph{não} sustenta uma outra sentença, é chamada de \emph{contrainterpretação} ou \emph{contramodelo}.
+Uma interpretação que refuta uma proposta, ou seja, que mostra que uma forma argumentativa \emph{não} é válida, ou que uma fórmula \emph{não} é válida (logicamente necessária), ou que um conjunto de sentenças \emph{não} sustenta logicamente uma outra sentença, é chamada de \emph{contrainterpretação} ou \emph{contramodelo}.
 
 
 
@@ -1016,7 +1016,7 @@ Uma interpretação que refuta uma proposta, ou seja, que mostra que um argument
 \solutions
 \problempart
 \label{pr.Contingent}
-Mostre que cada uma das seguintes sete sentenças não é nem uma validade (necessidade lógica) nem uma contradição.
+Mostre que cada uma das fórmulas abaixo não é nem uma validade (necessidade lógica) nem uma contradição.
 \begin{earg}
 \item \leftsolutions\ $\atom{D}{a}  \eand \atom{D}{b}$
 \item \leftsolutions\ $\exists x\, \atom{T}{x,h}$
@@ -1030,7 +1030,7 @@ Mostre que cada uma das seguintes sete sentenças não é nem uma validade (nece
 \solutions
 \problempart
 \label{pr.NotEquiv}
-Mostre que as sentenças de cada um dos nove pares seguintes não são logicamente equivalentes.
+Mostre que as fórmulas de cada um dos pares seguintes não são logicamente equivalentes.
 \begin{earg}
 \item $\atom{J}{a} $,  $\atom{K}{a}$
 \item $\exists x\, \atom{J}{x}$,  $\atom{J}{m}$
@@ -1044,7 +1044,7 @@ Mostre que as sentenças de cada um dos nove pares seguintes não são logicamen
 \end{earg}
 
 \problempart
-Mostre que as sentenças de cada um dos treze grupos abaixo são conjuntamente satisfatórias.
+Mostre que as fórmulas de cada um dos grupos abaixo são conjuntamente satisfatórias.
 \begin{earg}
 \item  $\atom{M}{a}, \enot \atom{N}{a}, \atom{P}{a}, \enot \atom{Q}{a}$
 \item $\atom{L}{e,e}, \atom{L}{e,g}, \enot \atom{L}{g,e}, \enot \atom{L}{g,g}$
@@ -1062,7 +1062,7 @@ Mostre que as sentenças de cada um dos treze grupos abaixo são conjuntamente s
 \end{earg}
 
 \problempart
-Mostre que cada um dos dez argumentos abaixo é inválido.
+Mostre que as formas argumentativas abaixo são inválidas.
 \begin{earg}
 \item $\forall x(\atom{A}{x} \eif \atom{B}{x}) \therefore \exists x\, \atom{B}{x}$
 \item $\forall x(\atom{R}{x} \eif \atom{D}{x}), \forall x(\atom{R}{x} \eif \atom{F}{x}) \therefore \exists x(\atom{D}{x} \eand \atom{F}{x})$
@@ -1080,33 +1080,33 @@ Mostre que cada um dos dez argumentos abaixo é inválido.
 \chapter[Infinitas interpretações]{Raciocinando sobre uma infinidade de interpretações}\label{s:InfinitInterpret}
 
 \section{Validades e contradições}
-Para mostrar que uma sentença não é uma validade basta apresentarmos uma única interpretação na qual a sentença é falsa.
-Mas para mostrar que uma sentença é uma validade, não é suficiente propor dez, cem, nem mesmo mil interpretações nas quais a sentença é verdadeira.
-Uma sentença é uma validade apenas se for verdadeira em \emph{todas} as interpretações; e há infinitas delas.
+Para mostrar que uma fórmula não é uma validade basta apresentarmos uma única interpretação na qual ela seria falsa.
+Mas para mostrar que uma fórmula é uma validade, não é suficiente propor dez, cem, nem mesmo mil interpretações nas quais ela seria verdadeira.
+Uma fórmula é uma validade apenas se for verdadeira em \emph{todas} as interpretações; e há infinitas delas.
 Precisamos ser capazes de raciocinar sobre todas elas, e não conseguiremos fazer isso lidando com elas uma de cada vez!
 
 Raciocinar sobre todas as infinitas interpetações pode soar uma tarefa impossível.
 Mas não é.
 Algumas vezes nem  é tão complicado.
-Veja como podemos mostar que a sentença \mbox{`$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$'} é uma validade:
+Veja como podemos mostar que a fórmula \mbox{`$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$'} é uma validade:
 	\begin{quote}
 		\label{allmodels1}
-		Qualquer interpretação relevante (ou seja que leve em consideração a relação `$R$' e o nome `$a$') atribui um valor de verdade à sentença `$\atom{R}{a,a}$', que será verdadeira ou falsa.
-		Então, se pensarmos na totalidade das interpretações relevantes, podemos dividir esta totalidade em dos grupos, o grupo (1), constituído pelas interpretações em que `$\atom{R}{a,a}$' é verdadeira, e o grupo (2), com as interpretações em que  `$\atom{R}{a,a}$' é falsa.
+		Qualquer interpretação relevante (ou seja que leve em consideração a relação `$R$' e o nome `$a$') tornará `$\atom{R}{a,a}$' verdadeira ou falsa.
+		Então, se pensarmos na totalidade das interpretações relevantes, podemos dividir esta totalidade em dois grupos, o grupo (1), constituído pelas interpretações em que `$\atom{R}{a,a}$' é verdadeira, e o grupo (2), com as interpretações em que  `$\atom{R}{a,a}$' é falsa.
 		`$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$' será verdadeira em todas as interpretações do grupo (1), já que em todas elas `$\atom{R}{a,a}$' é verdadeira.
 		Nas interpretações do grupo (2), como  `$\atom{R}{a,a}$' é falsa em todas elas, sabemos que `$\enot \atom{R}{a,a}$' é verdadeira em todas elas, e por isso, `$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$' também é verdadeira em todas as interpretações do grupo(2).
-		Como a sentença `$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$' é verdadeira em todas as interpretações do grupo (1) e do grupo (2), e qualquer interpretação está em um destes dois grupos, então `$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$' é verdadeira em todas as interpretações e é, por isso, uma validade.
+		Como `$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$' é verdadeira em todas as interpretações do grupo (1) e do grupo (2), e qualquer interpretação está em um destes dois grupos, então `$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$' é verdadeira em todas as interpretações e é, portanto, uma validade.
 		%Como os grupos (1) e (2) esgotam todas as interpretações e a sentença `$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$' é verdadeira em todas as interpretações destes dois grupos, então ela é verdadeira em todas as interpretações, e por isso é uma validade.
 	\end{quote}
 Esta explicação é, ela própria, um argumento válido, e sua conclusão é verdadeira. Mas esta explicação não é um argumento na LPO, é um argumento em português \emph{sobre} a LPO; ou seja, é um argumento em nossa metalinguagem.
 
-Uma outra característica deste nosso argumento metalinguístico é que como a sentença em questão não contem quantificadores, não precisamos pensar em como interpretar `$a$' e `$R$'; dissemos apenas que qualquer que seja a interpretação,  `$\atom{R}{a,a}$' será verdadeira ou falsa.
-Poderíamos ter argumentado de modo similar a respeito de sentenças da LPC.
+Uma outra característica deste nosso argumento metalinguístico é que como a fórmula em questão não contem quantificadores, não precisamos pensar em como interpretar `$a$' e `$R$'; dissemos apenas que qualquer que seja a interpretação,  `$\atom{R}{a,a}$' será verdadeira ou falsa.
+Poderíamos ter argumentado de modo similar a respeito de fórmulas da LPC.
 
 Eis aqui um outro exemplo de raciocínio sobre todas as interpretações.
-Considere a sentença `$\forall x(\atom{R}{x,x}\eor\enot \atom{R}{x,x})$'.
-Novamente, esta sentença parece uma validade óbvia, mas explicar precisamente por quê, é um grande desafio.
-Não podemos dizer simplesmente que `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$' é verdadeira em todas as interpretações, uma vez que `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$' não é nem mesmo uma \emph{sentença} da LPO (lembre-se de que `$x$' é uma variável, não um nome).
+Considere a fórmula `$\forall x(\atom{R}{x,x}\eor\enot \atom{R}{x,x})$'.
+Novamente, ela parece uma validade óbvia, mas explicar precisamente por quê, é um grande desafio.
+Não podemos dizer simplesmente que `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$' é verdadeira em todas as interpretações, uma vez que `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$' não é nem mesmo uma \emph{fórmula fechada} da LPO (lembre-se de que `$x$' é uma variável, não um nome).
 Temos, então, que ser um pouco mais espertos.
 	\begin{quote}
 		Considere uma interpretação arbitrária.
@@ -1132,16 +1132,18 @@ Considerando que a quantidade delas é infinita, até que nosso raciocínio não
 \section{Outros casos}
 Há outros casos que também exigem que raciocinemos sobre todas as interpretações. Devemos fazê-lo se quisermos mostrar:
 	\begin{ebullet}
-	\item que uma sentença é uma contradição; pois isso requer que ela seja falsa em \emph{todas} as interpretações.
-	\item que duas sentenças são logicamente equivalentes; pois isso requer que elas tenham o mesmo valor de verdade em \emph{todas} as interpretações.
-	\item que algumas sentenças são conjuntamente insatisfatórias; pois isso requer que não haja interpretação na qual todas essas sentenças sejam verdadeiras; ou seja, que, em \emph{toda} interpretação, pelo menos uma dessas sentenças seja falsa.
-	\item que um argumento é válido; pois isso requer que a conclusão seja verdadeira em \emph{toda} interpretação em que as premissas são verdadeiras.
-	\item que algumas sentenças sustentam alguma outra, pois isso também requer que a sentença sustentada seja verdadeira em \emph{toda} interpretação em que as sentenças que sustentam são verdadeiras.
+	\item que uma fórmula é contraditória; pois isto requer que ela seja falsa em \emph{todas} as interpretações.
+	\item que duas fórmulas são logicamente equivalentes; pois isso requer que elas tenham o mesmo valor de verdade em \emph{todas} as interpretações.
+	\item que algumas fórmulas são conjuntamente insatisfatórias; pois isso requer que não haja interpretação na qual elas sejam verdadeiras; ou seja, que, em \emph{toda} interpretação, pelo menos uma delas seja falsa.
+	\item que uma forma argumentativa é válida; pois isso requer que a conclusão seja verdadeira em \emph{toda} interpretação em que as premissas são verdadeiras.
+	\item que certas sentenças sustentam alguma outra, pois isso também requer que a sentença sustentada seja verdadeira em \emph{toda} interpretação em que as sentenças que sustentam são verdadeiras.
 	\end{ebullet}
-O problema é que, com as ferramentas que temos no momento, raciocinar sobre todas as interpretações é um sério desafio! Vamos ver apenas mais um exemplo. Aqui está um argumento que é obviamente válido:
+        O problema é que, com as ferramentas que temos no momento, raciocinar sobre todas as interpretações é um sério desafio!
+        Vamos ver apenas mais um exemplo.
+        Aqui está uma forma argumentativa que é obviamente válida:
 	$$\forall x(\atom{H}{x} \eand \atom{J}{x}) \ \therefore \ \forall x\, \atom{H}{x}$$
 Afinal de contas, se tudo é $H$ e $J$, então tudo é $H$.
-Mas só conseguimos mostrar que este argumento é válido se mostrarmos o que deve ser verdadeiro em todas as interpretações nas quais a premissa é verdadeira.
+Mas só conseguimos mostrar que esta forma argumentativa é válida se mostrarmos o que deve ser verdadeiro em todas as interpretações nas quais a premissa é verdadeira.
 Para mostrar isso temos que raciocinar da seguinte maneira:
 	\begin{quote}
 		Considere uma interpretação arbitrária na qual a premissa `$\forall x(\atom{H}{x} \eand \atom{J}{x})$' seja verdadeira.
@@ -1152,9 +1154,10 @@ Para mostrar isso temos que raciocinar da seguinte maneira:
 		Logo, `$\forall x\, \atom{H}{x}$' deve ser verdadeira nesta interpretação.
 		Como a única coisa que assumimos sobre a interpretação é que nela `$\forall x(\atom{H}{x} \eand \atom{J}{x})$' é verdadeira, então, a mesma conclusão deve valer para qualquer outra interpretação que satisfaça a mesma condição.
 		Ou seja, qualquer interpretação na qual `$\forall x(\atom{H}{x} \eand \atom{J}{x})$' é verdadeira é tal que `$\forall x\, \atom{H}{x}$' também é verdadeira.
-		Por isso o argumento é válido!
+		Por isto, a forma é válida!
 \end{quote}
-Veja que mesmo para um argumento simples como esse, o raciocínio que demonstra sua validade é um pouco complicado. Para argumentos mais longos e complexos a demonstração de sua validade pode ser extremamente torturante.
+        Veja que mesmo para uma forma simples como esta, o raciocínio que demonstra sua validade é um pouco complicado.
+        Para argumentos mais longos e complexos, a demonstração de sua validade pode ser extremamente torturante.
 
 A tabela a seguir indica, para todos os conceitos semânticos que vimos, se as demonstrações de que eles se aplicam ou não se aplicam exigem apenas \textbf{uma} interpretação ou se é necessário raciocinarmos sobre \textbf{todas} as interpretações.
 
@@ -1164,11 +1167,11 @@ A tabela a seguir indica, para todos os conceitos semânticos que vimos, se as d
 \textbf{Teste} & \textbf{Sim} & \textbf{Não}\\
  \hline
 \cline{1-3}
-a sentença é uma validade? & todas & uma \\
-a sentença é uma contradição? &  todas  & uma \\
-as sentenças são equivalentes? & todas & uma \\
-as sentenças são conjuntamente satisfatórias? & uma & todas \\
-O argumento é válido? & todas & uma \\
+a fórmula é válida? & todas & uma \\
+a fórmula é contraditória? &  todas  & uma \\
+as fórmulas são equivalentes? & todas & uma \\
+as fórmulas são conjuntamente satisfatórias? & uma & todas \\
+A forma argumentativa é válida? & todas & uma \\
 As premissas sustentam a conclusão? & todas & uma \\
 \cline{1-3}
 \end{tabular}
