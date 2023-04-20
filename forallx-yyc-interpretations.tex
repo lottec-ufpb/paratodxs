@@ -60,7 +60,7 @@ têm significados muito diferentes!
 O ponto aqui é que a LPO não nos fornece nenhum recurso para lidar com nuances de significado.
 O único modo no qual dois predicados da LPO podem ser distintos um do outro é sendo verdadeiros de coisas diferentes.
 %Tudo o que conseguimos dizer na LPO através de predicados é de que coisas eles  são verdadeiros, seja estipulando diretamente (listando explicitamente as coisas), seja indiretamente, via chave de simbolização.
-As coisas das quais um predicado é verdadeiro são conhecidas como a \xdefine{extensao} desse predicado.
+As coisas das quais um predicado é verdadeiro são conhecidas como a \xdefine{extens\~ao} desse predicado.
 Nós dizemos que a LPO é uma \xdefine{linguagem extensional} porque ela reduz os predicados a suas extensões.
 Ou seja, não conseguimos, com a LPO, exprimir as diferenças de significado entre predicados que tenham a mesma extensão.    
 
@@ -178,19 +178,23 @@ Nós o escrevemos um pouco diferente das outras relações binárias:
 \begin{center}
 	`$x=y$' \ \ \ em vez de \ \ \ `$\atom{I}{x,y}$'
 \end{center}
-Mais importante que isso, porém, é que a interpretação semântica da identidade é fixa, não depende, como os outros predicados, de chaves de simbolização, nem de estipulações explícitas. 
+A identidade é especial pois é tomada como um símbolo lógico, como `$\forall, \exists, \rightarrow$', etc. Isto significa que, diferentemente de outras relações binárias que eventualmente ocorram na linguagem da LPO, a interpretação de `$=$' é fixa:
 
-Se dois nomes se referirem ao mesmo objeto, trocar um nome por outro não altera o valor de verdade de nenhuma sentença.
-Portanto, se, por exemplo, `$a$' e `$b$' nomearem o mesmo objeto, todas as sentenças abaixo serão verdadeiras:\label{model.nonidentity}
+\begin{center}
+Uma fórmula como `$\meta{t_1}=\meta{t_2}$' será verdadeira se e somente se a denotação de $\meta{t_1}$ é a mesma de $\meta{t_2}$.
+\end{center}
+
+Se dois termos se referirem ao mesmo objeto, trocar um termo por outro não altera o valor de verdade de nenhuma fórmula.
+Portanto, se, por exemplo, `$\meta{t_1}$' e `$\meta{t_2}$' nomearem o mesmo objeto, todas as fórmulas abaixo serão verdadeiras:\label{model.nonidentity}
 	\begin{align*}
-	 	\atom{A}{a} &\eiff \atom{A}{b} \\
-	 	\atom{B}{a} &\eiff \atom{B}{b}\\
-		\atom{R}{a,a} &\eiff \atom{R}{b,b}\\
-		\atom{R}{a,a} & \eiff \atom{R}{a,b}\\
-		\atom{R}{c,a} &\eiff \atom{R}{c,b}\\
-		\forall x\, \atom{R}{x,a} &\eiff \forall x\, \atom{R}{x,b}
+		\atom{A}{\meta{t_1}} &\eiff \atom{A}{\meta{t_2}} \\
+		\atom{B}{\meta{t_1}} &\eiff \atom{B}{\meta{t_2}}\\
+		\atom{R}{\meta{t_1},\meta{t_1}} &\eiff \atom{R}{\meta{t_2},\meta{t_2}}\\
+		\atom{R}{\meta{t_1},\meta{t_1}} & \eiff \atom{R}{\meta{t_1},\meta{t_2}}\\
+		\atom{R}{c,\meta{t_1}} &\eiff \atom{R}{c,\meta{t_2}}\\
+		%\forall x\, \atom{R}{x,a} &\eiff \forall x\, \atom{R}{x,b}
 	\end{align*}
-O que acabamos de dizer é conhecido como o \emph{princípio da indiscernibilidade dos idênticos}, que afirma, em resumo, que se `$a$' e `$b$' são o mesmo objeto, então qualquer coisa que seja verdadeiro afirmar de um deles também será verdadeira quando afirmada do outro:	
+O que acabamos de dizer é conhecido como o \emph{princípio da indiscernibilidade dos idênticos}, que afirma, em resumo, que se `$a$' e `$b$' se referem ao mesmo objeto, então qualquer coisa que seja verdadeiro afirmar de $a$ também será verdadeira quando afirmada de $b$:	
 \begin{align*} 
 	\text{\textbf{Se} \ $a=b$ \textbf{ \ então \ } }&\text{\small qualquer afirmação verdadeira sobre $a$}\\
 	&\text{\small também será verdadeira quando afirmada de $b$}\\
@@ -198,45 +202,7 @@ O que acabamos de dizer é conhecido como o \emph{princípio da indiscernibilida
 	&\text{\small qualquer afirmação verdadeira sobre $b$}\\
 	&\text{\small também será verdadeira quando afirmada de $a$}
 \end{align*}
-Este é um princípio incontroverso e reflete com precisão um importante aspecto da identidade.
-Alguns filósofos, no entanto, defendem também o princípio inverso desse.
-Eles defendem que se `$a$' e `$b$' nomeiam objetos tais que qualquer coisa que seja verdadeira quando afirmada sobre um deles também é verdadeira quando afirmada sobre o outro, então $a$ e $b$ nomeiam o mesmo objeto (`$a=b$'):
-\begin{align*} 
-	\text{\textbf{Se \ \ }}&\text{\small qualquer afirmação verdadeira sobre $a$}&&\\
-	&\text{\small também é verdadeira quando afirmada de $b$}&&\\
-	&\text{\textbf{ \ e}}&&\\
-	&\text{\small qualquer afirmação verdadeira sobre $b$}&&\\
-	&\text{\small também é verdadeira quando afirmada de $a$}&\text{\textbf{ então \ \ }}&a=b
-\end{align*}
-Este segundo princípio é conhecido como \emph{princípio da identidade dos indiscerníveis} e é uma afirmação filosófica mais controversa do que o seu inverso, o princípio da indiscernibilidade dos idênticos.
-Ou seja, é incontroverso que o que é idêntico é também (e por causa disso) indiscernível, indistinguível.
-Mas não é incontroverso que o que é indiscernível seja também, e por causa disso, idêntico.
-Por esse motivo, conforme ficará claro mais adiante, a interpretação semântica da identidade na LPO contemplará o princípio da indiscernibilidade dos idênticos (este princípio será válido na LPO), mas não contemplará o princípio da identidade dos indiscerníveis (que não será um princípio válido na LPO).
 
-Talvez você esteja com razão se perguntando por que o princípio da identidade dos indiscerníveis é controverso.
-Afinal, parece plausível aceitar que aquilo que não se pode distinguir deva mesmo ser idêntico.
-O ponto da controvérsia é que a distinguibilidade dos objetos é algo que depende de \emph{nós}, da \emph{nossa linguagem}, de \emph{nossos conceitos}, ao passo que a identidade dos objetos não parece depender de nós, mas apenas dos próprios objetos.
-A ideia é que pode ocorrer de, por exemplo, não termos linguagem nem conceitos refinados o suficiente para conseguir distinguir certos objetos que nos aparecem indistinguíveis mas que são, na realidade, distintos.
-O seguinte exemplo é um tanto artificial, mas nos ajuda a entender como nossa linguagem pode ser inadequada para perceber certas distinções.
-Considere a seguinte interpretação (chave de simbolização):
-	\begin{center}
-	\begin{ebullet}
-		\item[\text{domínio}:] Bertrand Russell, Bruno Vaz
-		\item[$a$:] Bertrand Russell
-		\item[$b$:] Bruno Vaz
-		\item Para todo predicado primitivo que considerarmos, esse predicado não é verdadeiro de \emph{nenhum} elemento do domínio.
-	\end{ebullet}
-	\end{center}
-Suponha que `$A$' seja um predicado de um lugar.
-Dada nossa interpretação, `$\atom{A}{a}$' e `$\atom{A}{b}$' são ambas falsas.
-Afinal, estipulamos que os elementos do domínio não satisfazem nenhum predicado que quisermos considerar.
-Mas como `$\atom{A}{a}$' e `$\atom{A}{b}$' são ambas falsas, então `$\atom{A}{a} \eiff \atom{A}{b}$' é verdadeira.
-Da mesma forma, seja `$R$' um predicado de dois lugares.
-Então `$\atom{R}{a,a}$' será falsa, e também `$\atom{R}{a,b}$'.
-Logo, `$\atom{R}{a,a} \eiff \atom{R}{a,b}$' será verdadeira.
-Bem, você já deve ter notado que, dada nossa interpretação, se não usarmos a identidade, não vamos conseguir distinguir aquilo que `$a$' nomeia (Bertrand Russell) do que `$b$' nomeia (Bruno Vaz).
-Porque o que quer que dissermos de `$a$' será equivalente à mesma sentença dita de `$b$'.
-No entanto, Bruno Vaz e Bertrand Russell não são a mesma pessoa.
 
 
 \section{Interpretações}\label{s:Interpret}
@@ -245,15 +211,13 @@ Na LPO, vamos definir uma \define{interpretation} como consistindo dos seguintes
 	\begin{ebullet}	
 		\item a especificação de um domínio;
 		\item a definição de um valor de verdade para cada letra sentencial que considerarmos;
-		\item a atribuição de exatamente um objeto no domínio para cada nome que considerarmos;
+		\item a atribuição de exatamente um objeto no domínio para cada nome e para cada variável que considerarmos;
 		\item para cada predicado de um lugar que considerarmos, uma especificação das coisas do domínio para as quais o predicado deve ser verdadeiro (sua extensão);
 		\item para cada predicado de $n$ lugares que considerarmos, uma especificação das sequências ordenadas de $n$ coisas do domínio \ntuple{$c_1,\ldots,c_n$} para as quais o predicado deve ser verdadeiro (sua extensão).
 	\end{ebullet}
-Dados estes elementos, as chaves de simbolização que consideramos na Parte~\ref{ch.FOL} nos proporcionam uma maneira muito conveniente de apresentar uma interpretação.
-E nós continuaremos a usá-las ao longo desta Parte.
-Sendo um pouco mais precisos aqui, podemos dizer que uma \emph{interpretação é exatamente uma chave de simbolização} que contempla todos estes elementos acima.\footnote{
+Dados estes elementos, as chaves de simbolização que consideramos na Parte~\ref{ch.FOL} nos proporcionam uma maneira muito conveniente de apresentar uma interpretação.\footnote{
 	Alguns destes elementos podem ficar de fora de algumas interpretações caso o contexto de sua utilização não os exija. Por exemplo, não há necessidade de uma interpretação ter letras sentenciais, se não simbolizarmos nenhuma sentença com letras sentenciais. Da mesma forma, se nenhum indivíduo do domínio do discurso tem nome, os nomes podem ficar de fora de uma interpretação; ou se não estamos interessados em relações, mas apenas em predicados de um lugar, então as relações também podem ficar de fora.}
-No entanto, às vezes também é conveniente apresentar uma interpretação \emph{diagramaticamente}.
+E nós continuaremos a usá-las ao longo desta Parte. No entanto, às vezes também é conveniente apresentar uma interpretação \emph{diagramaticamente}.
 
 Suponha que queiramos considerar apenas um predicado de dois lugares, `$\atom{R}{x,y}$'.
 Nós podemos representá-lo traçando setas, cada uma ligando dois objetos, e estipular que a extensão de `$\atom{R}{x,y}$' deve conter $\ntuple{a,b}$ (ou seja, que `$\atom{R}{a,b}$' é verdadeira) apenas se há uma seta partindo de $a$ e chegando em $b$.
@@ -308,58 +272,41 @@ Da mesma forma, para simbolizar a extensão de um predicado de um lugar, podemos
 \chapter{A verdade na LPO}\label{s:TruthFOL}
 Não custa nada relembrar aqui que o objetivo principal do estudo da lógica é avaliar argumentos, separando os válidos dos inválidos.
 E também não custa nada relembrar que um argumento é válido quando suas premissas justificam sua conclusão, ou seja, quando não é possível haver uma situação em que suas premissas sejam todas verdadeiras, mas sua conclusão seja falsa.
-Então, antes de sermos capazes de avaliar argumentos na LPO, precisamos ser capazes de ligar as sentenças da LPO a situações em que poderemos avaliar se elas são verdadeiras ou falsas.
+Então, antes de sermos capazes de avaliar argumentos na LPO, precisamos ser capazes de ligar as fórmulas da LPO a situações em que poderemos avaliar se elas são verdadeiras ou falsas.
 
-%Na LPC, esta ponte entre as sentenças simbolizadas e as situações é feita pelas valorações.
-Na LPC, esta ponte que nos possibilita interpretar sentenças simbolizadas em situações nas quais elas serão verdadeiras ou falsas é dada pelas chaves de simbolização, juntamente com as valorações.
-%Através de uma chave de simbolização, situações distintas produzem valorações distintas nas quais as sentenças são verdadeiras ou falsas;
-Através de uma chave de simbolização, a verdade ou falsidade das sentenças em português nas diversas situações transforma-se na verdade ou falsidade das sentenças simbolizadas na LPC nas diversas valorações.
-Uma chave de simbolização liga situações distintas a valorações distintas que correspondem às diversas linhas das tabelas de verdade, nas quais as sentenças da LPO são verdadeiras ou falsas.
-E a consideração dos valores de verdade das sentenças em todas as valorações possíveis, feita nas tabelas de verdade, nos possibilita avaliar a validade dos argumentos.\footnote{
+Na LPC, essas situações são as valorações, que atribuem valores de verdade às sentenças.
+As tabelas de verdade listam todas as valorações, isto é, todas as situações possíveis que podem tornar a fórmulas da LPC verdadeiras ou falsas, o que nos possibilita avaliar a validade dos argumentos.\footnote{
 	Se quiser relembrar os detalhes deste processo na LPC, releia a Seção~\ref{s:SustentValid}, p.\,\pageref{s:SustentValid}.}
-%e a consideração, através das tabelas de verdade, de todas as valorações possíveis, nos possibilita avaliar a validade dos argumentos.
 
-No caso da LPO, esta ponte entre as sentenças simbolizadas e as situações é feita pela noção de interpretação, introduzida na Seção \ref{s:Interpret}, p.\,\pageref{s:Interpret}.
-Vimos ali que uma interpretação é uma chave de simbolização composta por: 
+No caso da LPO, esta ponte entre as fórmulas simbolizadas e as situações é feita pela noção de interpretação, introduzida na Seção \ref{s:Interpret}, p.\,\pageref{s:Interpret}.
+Vimos ali que uma interpretação é composta por: 
 \begin{ebullet}
 	\item um domínio do discurso;
 	\item uma atribuição (direta ou indireta) de valores de verdade para cada letra sentencial;
-	\item a definição de uma referência, no domínio, para cada nome;
+	\item a definição de uma referência, no domínio, para cada nome e para cada variável;
 	\item a definição (dierta ou indireta) de uma extensão para cada predicado e relação.
 \end{ebullet}
-Uma chave de simbolização com todos esses componentes constitui uma interpretação e nos fornece tudo o que precisamos para decidir se uma sentença qualquer da LPO é verdadeira ou falsa.
-Entender como utilizar interpretações para classificar as sentenças da LPO como verdadeiras ou falsas é o primeiro passo para conseguirmos avaliar argumentos na LPO, e será nossa tarefa neste capítulo.
+Uma interpretação nos fornece tudo o que precisamos para decidir se uma fórmula qualquer da LPO é verdadeira ou falsa.
+Entender como utilizar interpretações para classificar as fórmulas da LPO como verdadeiras ou falsas é o primeiro passo para conseguirmos avaliar argumentos na LPO, e será nossa tarefa neste capítulo.
 
-Sabemos, do Capítulo \ref{s:FOLSentences}, que existem três tipos de sentenças na LPO:
+Sabemos, do Capítulo \ref{s:FOLSentences}, que existem três tipos de fórmulas na LPO:
 	\begin{itemize}
-		\item sentenças atômicas:
-		\begin{ebullet}
-			\item $\atom{C}{b}$
-			\item $\atom{A}{r,j}$
-			\item $Q$
-		\end{ebullet}
-		\item sentenças cujo operador principal é um conectivo sentencial:
-		\begin{ebullet}
-			\item $\atom{C}{b} \eand Q$
-			\item $\atom{A}{r,j} \eif \forall x\,\atom{C}{x}$
-			\item $\enot Q$
-		\end{ebullet}
-		\item sentenças cujo operador principal é um quantificador:
-		\begin{ebullet}
-			\item $\exists x\,\atom{C}{x}$
-			\item $\forall x (\atom{A}{x,j} \eif \atom{C}{x})$
-			\item $\exists x \exists y (\atom{A}{x,y} \eand \atom{A}{y,x})$
-		\end{ebullet}
+		\item fórmulas atômicas
+		\item sentenças cujo operador principal é um conectivo sentencial
+		\item sentenças cujo operador principal é um quantificador
 	\end{itemize}
-Temos que explicar como atribuir valores de verdade para cada um destes tipos de sentenças.
+Temos que explicar como atribuir valores de verdade para cada um destes tipos de fórmulas.
 
 A explicação que daremos aqui é completamente geral e vale para qualquer interpretação.
-No entanto, para facilitar a compreensão, usaremos a seguinte interpretação como exemplo privilegiado:
+No entanto, para facilitar a compreensão, usaremos a seguinte interpretação $I$ como exemplo privilegiado:
 \begin{center}\label{i:Sample}
 	\begin{ekey}
 		\item[\text{domínio}] {\small todas as pessoas (vivas ou mortas) nascidas antes do ano 2020}
 		\item[a] {\small Aristóteles}
 		\item[b] {\small Simona Talma}
+		\item[c] {\small Sócrates}
+		\item[d] {\small Platão}
+		\item[x,y,z,...] {\small Aristóteles}
 		\item[C] {\small Simona Talma é uma artista potiguar\,}\footnote{
 			Poderíamos aqui ter criado um predicado tal como `$\atom{P}{x}$' para `\gap{x}~é uma artista portiguar' e simbolizar `Simona Talma é uma artista potiguar' como `$\atom{P}{b}$'.
 			Não fizemos isso porque queremos que a interpretação de nosso exemplo tenha também uma letra sentencial `$C$' que, tal  como na LPC, tem exatamente o mesmo valor de verdade que a sentença `Simona Talma é uma artista potiguar'.}
@@ -371,49 +318,29 @@ No entanto, para facilitar a compreensão, usaremos a seguinte interpretação c
 \end{center}
 Esta interpretação será o nosso caso de estudo nas Seções seguintes.
 
+\section{Termos individuais}
 
-\section{Sentenças atômicas}
-Existem três tipos de sentenças atômicas na LPO, as letras sentenciais, tais como `$C$' e `$D$', os predicados seguidos de nomes, tais como  `$\atom{F}{a}$' e `$\atom{F}{b}$', e as relações $n$-árias seguidas de $n$-uplas ordenadas de nomes, tais como `$\atom{R}{a,b}$' e `$\atom{R}{b,a}$'.
-Precisamos, então, entender como as interpretações atribuem valores de verdade para cada um desses três tipos de sentenças atômicas.
+Uma interpretação fornece uma denotação no seu domínio para cada termo individual da linguagem, seja constante, seja variável.
+Se $t$ é um termo individual e $\mathbf{I}$ uma interpretação, utilizaremos $\mathbf{I}(t)$ para significar: a denotação oferecida por $\mathbf{I}$ a $t$.
+No exemplo acima, as constantes individuais $a$,$b$ são interpretadas como se referindo a Aristóteles e a Simona Talma, respectivamente, isto é, $\mathbf{I}(a)$ = Aristóteles e $\mathbf{I}(b)$ = Siona Talma.
+Já paras variáveis $x,y,z,...$ temos que nessa interpretação ocorre que $\mathbf{I}(x)=\mathbf{I}(y)=\mathbf{I}(z)=...=$ Aristóteles (naturalmente, podemos também definir outra interpretação em que algumas variáveis se referem a Aristóteles e outras a Simona Talma).
 
-No caso das letras sentenciais, isso é uma operação imediata idêntica ao que fazíamos na LPC.
-A interpretação estabelece direta ou indiretamente se a letra sentencial é verdadeira ou falsa.
-Em nosso exemplo
-\begin{center}
-	$`C'$ \ \ é \ \ verdadeira   
-\end{center}
-porque Simona Talma é mesmo uma artista potiguar.
-A interpretação nos dá aqui uma especificação indireta através da sentença em português `Simona Talma é uma artista potiguar'.
-A letra sentencial terá o mesmo valor de verdade desta sentença.
 
-Por outro lado,
-\begin{center}
-	$`D'$ \ \ é \ \ falsa   
-\end{center}
-porque a interpretação estabelece diretamente este fato, sem qualquer sentença intermediária.
 
-%Se a sentença atômica for constituída por um predicado seguido de um nome, tal como `$\atom{F}{a}$', ela será verdadeira apenas no caso do predicado `$\atom{F}{x}$' ser verdadeiro do indivíduo que `$a$' nomeia.
-Quando a sentença atômica é constituída por um predicado seguido de um nome, tal como `$\atom{F}{a}$', ela será verdadeira apenas no caso em que o indivíduo que `$a$' nomeia esteja na extensão do predicado `$\atom{F}{x}$'.
-Em nossa interpretação, a extensão de `$\atom{F}{x}$' é dada indiretamente pelo predicado `\gap{x} é filósofo'.
-Então,
-\begin{center}
-	`$\atom{F}{a}$' \ \ é \ \ verdadeira
-\end{center}
-já que `$a$' nomeia Aristóteles e Aristóteles é um filósofo.
-De modo semelhante,
-\begin{center}
-	`$\atom{F}{b}$' \ \ é \ \ falsa
-\end{center}
-porque `$b$' nomeia Simona Talma, que não é uma filósofa.
+\section{Fórmulas atômicas}
+Existem dois tipos de fórmulas atômicas na LPO, as letras sentenciais, tais como `$C$' e `$D$' e as relações $n$-árias seguidas de $n$-uplas ordenadas de termos, tais como `$\atom{P}{b}$', $`\atom{Q}{a,b}$' e `$\atom{M}{x,a,y}$'.
 
-Por fim, se a sentença atômica for uma relação seguida de uma sequência ordenada de nomes, tal como `$\atom{R}{a,b}$', ela será verdadeira apenas se o par ordenado dos indivíduos nomeados por `$a$' e `$b$', \ntuple{Aristóteles, Simona Talma}, estiver na extensão do predicado `$\atom{R}{x,y}$'.
+No caso das letras sentenciais, assim como ocorre na LPC, a interpretação estabelece direta ou indiretamente se a letra sentencial é verdadeira ou falsa.
+
+Se a fórmula atômica for uma relação $n$-ária seguida de uma sequência ordenada de termos, tal como `$\atom{R}{x,b}$', ela será verdadeira apenas se \ntuple{I(x), I(b)}, isto é,  \ntuple{Aristóteles, Simona Talma}, estiver na extensão do predicado `$\atom{R}{x,y}$'. 
+
 Em nossa interpretação esta extensão é definida indiretamente através da relação
 \begin{center}
 	`\gap{x} nasceu antes que \gap{y}'.
 \end{center}	
-Como Aristóteles nasceu antes de Simona Talma, então o par \ntuple{Aristóteles, Simona Talma} está na extensão de `$\atom{R}{x,y}$' e
+Como Aristóteles nasceu antes de Simona Talma, a denotação de $x$ e Aristóteles e de $b$ é Simona Talma, então o par \ntuple{Aristóteles, Simona Talma} está na extensão de `$\atom{R}$' e
 \begin{center}
-	`$\atom{R}{a,b}$' \ \ é \ \ verdadeira
+	`$\atom{R}{x,b}$' \ \ é \ \ verdadeira
 \end{center}
 Da mesma forma, podemos facilmente verificar que 
 \begin{center}
@@ -421,21 +348,20 @@ Da mesma forma, podemos facilmente verificar que
 \end{center}
 porque Aristóteles não nasceu antes que Aristóteles.
 
-Lidar com sentenças atômicas é, portanto, muito intuitivo.
-As letras sentencias são tratadas exatamente do mesmo modo que na LPC e quando \meta{R} é um predicado $n$-lugares e \mbox{$\meta{a}_1 $, $\meta{a}_{2}$, \dots, $\meta{a}_{n}$} \ são nomes, temos:
+De modo geral, quando \meta{R} é um predicado $n$-lugares e \mbox{$\meta{t}_1 $, $\meta{t}_{2}$, \dots, $\meta{t}_{n}$} \ são termos, temos:
 
 	\factoidbox{
-		$\atom{\meta{R}}{\meta{a}_{1},\meta{a}_{2},\dots,\meta{a}_{n}}$ é verdadeira em uma interpretação\\
+		$\atom{\meta{R}}{\meta{t}_{1},\meta{t}_{2},\dots,\meta{t}_{n}}$ é verdadeira em uma interpretação\\
 		\textbf{se e somente se}\\
-		$\meta{R}$ é verdadeira dos objetos nomeados por $\meta{a}_{1}$, $\meta{a}_{2}$, \dots, $\meta{a}_{n}$ na interpretação (considerados nesta ordem)
+		os objetos denotados por $\meta{t}_{1}$, $\meta{t}_{2}$, \dots, $\meta{t}_{n}$ na interpretação (considerados nesta ordem) estão na extensão de $\meta{R}$.
 	}
-Lembre-se, porém, de que existe um tipo especial de sentença atômica: dois nomes conectados por um sinal de identidade constituem uma sentença atômica.
+Lembre-se, porém, de que existe um tipo especial de fórmula atômica: dois termos conectados por um sinal de identidade constituem uma fórmula atômica.
 Esse tipo de sentença atômica também é fácil de lidar.
-Sejam \meta{a} e \meta{b} nomes quaisquer,
+Sejam \meta{t_1} e \meta{t_2} termos quaisquer,
 	\factoidbox{
-		$\meta{a} = \meta{b}$ é verdadeira em uma interpretação\\
+		$\meta{t_1} = \meta{t_2}$ é verdadeira em uma interpretação\\
 		\textbf{se e somente se}\\
-		 \meta{a} e \meta{b} são nomes do mesmo objeto nesta interpretação
+		 \meta{t_1} e \meta{t_2} se referem ao mesmo objeto nesta interpretação
 	}
 Portanto, em nossa interpretação,
 \begin{center}
@@ -487,141 +413,59 @@ Simplesmente aplicamos, em cada caso, a definição correspondente do quadro aci
 
 
 \section[Quantificadores]{Quando o operador principal é um quantificador}\label{s:MainLogicalOperatorQuantifier}
+
 Até aqui viemos bem, mas ainda não tratamos do aspecto que representa a principal novidade introduzida na LPO:
 as sentenças cujo operador principal é um \emph{quantificador}.
-Veremos que expressar as condições de verdade deste tipo de sentenças é um pouco mais complicado do que parece à primeira vista.
-A ideia geral até que é simples e já foi mencionada de passagem em capítulos anteriores:
+A ideia geral é a seguinte:
 	\begin{earg}
-		\item[\textbullet] $\forall x \atom{\meta{A}}{x}$ é verdadeira \ \ \textbf{se e somente se}\\
-		$\atom{\meta{A}}{x}$ for verdadeira \textit{de todos} os elementos do domínio.\\
-		\item[\textbullet] $\exists x \atom{\meta{B}}{x}$ é verdadeira \ \ \textbf{se e somente se}\\
-		$\atom{\meta{B}}{x}$ for verdadeira \textit{de algum} elemento do domínio.
+	\item[\textbullet] $\forall x \atom{\meta{A}}{x}$ é verdadeira \textbf{se e somente se}\\ a fórmula
+			$\atom{\meta{A}}{x}$ for verdadeira para \emph{todos} objetos do domínio.\\
+		\item[\textbullet] $\exists x \atom{\meta{B}}{x}$ é verdadeira  \textbf{se e somente se} \\ a fórmula
+			$\atom{\meta{B}}{x}$ for verdadeira para \emph{algum} objeto do domínio $x$.
 	\end{earg}
-A dificuldade maior não é esta ideia geral, mas a especificação de sua definição precisa.
 
-Vamos aqui nos aproximar pouco a pouco da definição.
-Começaremos com algumas propostas ingênuas e vamos corrigindo-as até, eventualmente, chegarmos à definição correta.
-Uma primeira proposta é a seguinte:
-se, como vimos, `$\forall x\,\atom{F}{x}$' deve ser verdadeira se e somente se `$\atom{F}{x}$' é verdadeira para tudo no domínio,
-então poderíamos simplesmente considerar que uma sentença universal é verdadeira quando a extensão do predicado que a segue compreende todo o domínio do discurso.
-
-Esta ideia funciona quando o que vem após o quantificador inicial é um predicado, como em  `$\forall x\,\atom{F}{x}$'.
-Mas, infelizmente, essa ideia não é geral o suficiente para especificar as condições de verdade de sentenças onde o que segue o quantificador inicial não é um predicado, mas outra expressão quantificada, tal como ocorre em:
-$$\forall x \exists y\,\atom{L}{x,y}$$
-Não conseguimos aplicar esta ideia aqui, porque o que segue o quantificador não é um predicado, mas a expressão quantificada `$\exists y\,\atom{L}{x,y}$'.
-E as interpretações não têm cláusulas que indicam se `$\exists y\,\atom{L}{x,y}$' é verdadeira de tudo no domínio.
-As cláusulas das intepretações especificam apenas a referência de nomes e a extensão de predicados e relações.
-
-Para tentar corrigir isso poderíamos então sugerir que `$\forall x \exists y\, \atom{L}{x,y}$' deve ser verdadeira em uma interpretação se e somente se $\exists y\, \atom{L}{\meta{a},y}$ for verdadeira para \emph{todo} nome \meta{a} da interpretação.
-E, de modo similar, diríamos que $\exists y\, \atom{L}{\meta{a},y}$ é verdadeira se e somente se $\atom{L}{\meta{a}, \meta{b}}$ for verdadeira para \emph{algum} nome \meta{b}.
-Então, juntando estes dois passos, `$\forall x \exists y\, \atom{L}{x,y}$' seria verdadeira em uma interpretação se e somente se $\atom{L}{\meta{a}, \meta{b}}$ for verdadeira para \emph{todo} nome \meta{a} e \emph{algum} nome \meta{b} presentes na interpretação.
-
-Infelizmente, isso também não funciona.
-Para entender por que, basta observar que na interpretação de nossos exemplos (p.\,\pageref{i:Sample}), apenas duas pessoas têm nome, mas o domínio comporta todas as pessoas nascidas antes do ano 2020.
-
-Uma terceira ideia, então, é a seguinte.
-Mesmo que uma interpretação não tenha nomes para \emph{todos} os indivíduos do domínio, ela poderia ter.
-Ou seja, podemos estender uma interpretação qualquer, de modo a que todos os elementos do domínio tenham nomes.
-Antes de prosseguir com a definição, vejamos alguns exemplos de como isso pode funcionar.
-
-Em nossa interpretação privilegiada (p.\,\pageref{i:Sample}) `$\exists x\, \atom{R}{b,x}$' deve ser verdadeira. Afinal, certamente há no domínio alguém que nasceu depois que Simona Talma.
-Dani Cruz (uma outra artista potiguar) é uma dessas pessoas.
-De fato, se estendermos temporariamente nossa interpretação adicionando o nome `$c$' para se referir a Dani Cruz, então `$\atom{R}{b,c}$' será verdadeira nessa interpretação estendida.
-E este fato certamente deve ser suficiente para assegurar que `$\exists x\,\atom{R}{b,x}$' é verdadeira na nossa interpretação original, já que ele indica que há pelo menos uma pessoa no domínio (Dani Cruz) que nasceu depois de Simona Talma.
-
-Na nossa interpretação, `$\exists x (\atom{F}{x} \eand \atom{R}{x,a})$' também deve ser verdadeira.
-Afinal, no domínio, certamente há alguém que foi filósofo e nasceu antes de Aristóteles.
-Sócrates é uma dessas pessoas.
-De fato, se estendermos nossa interpretação, com um novo nome, `$d$', que denota Sócrates, então `$\atom{F}{d} \eand \atom{R}{d,a}$' será verdadeira nessa interpretação estendida.
-Novamente, isso certamente é suficiente como garantia de que `$\exists x (\atom{F}{x} \eand \atom{R}{x,a})$' é verdadeira na interpretação original (não estendida), já que isso indica que há pelo menos uma pessoa no domínio (Sócrates) que é filósofo e nasceu antes de Aristóteles.
-
-Já a sentença `$\forall x \exists y\, \atom{R}{x,y}$' deve ser falsa em nossa interpretação.
-Afinal, certamente há uma última pessoa que nasceu antes do ano 2020 começar.
-Não sabemos quem é esta pessoa, mas podemos, mesmo assim, estender a interpretação para que um nome novo, `$e$', denote exatamente esta pessoa.
-E fazendo isso, qualquer que seja o indivíduo do domínio ao qual um outro nome novo $`f'$ se refira, a sentença `$\atom{R}{e,f}$' seria falsa.
-De fato, não importa \emph{quem} seja a referência do nome `$f$', sabemos que `$\atom{R}{e,f}$' será falsa, já que `$e$' denota a última pessoa nascida em 2019. 
-Esse fato é certamente suficiente para garantir que `$\exists y\, \atom{R}{e,y}$' é falsa na interpretação estendida. E isso, por sua vez, é certamente suficiente como garantia de que `$\forall x \exists y\, \atom{R}{x,y}$' é falsa na nossa interpretação original.
-
-Se você entendeu esses três exemplos, ótimo. É isso que importa.
-O que temos que fazer, agora, é fornecer uma definição precisa dessas ideias, que exprima as condições de verdade para sentenças quantificadas.
-Para isso precisamos de mais notação em nossa metalinguagem.
-A expressão:
-$$\meta{A}(\meta{x})$$
-será usada para denotar na metalinguagem uma fórmula que contenha pelo menos uma ocorrência livre da variável \meta{x}.
-Ou seja, há uma ou mais ocorrências de \meta{x} em \meta{A} que estão fora do escopo de qualquer `$\forall x$' e `$\exists x$' em \meta{A}.
-Seja \meta{c} um nome.
-A expressão:
-$$\meta{A}(\meta{c})$$
-será usada para denotar na metalinguagem a fórmula obtida quando substituímos por $\meta{c}$ \emph{todas} as ocorrências livres de $\meta{x}$ em \meta{A}.
-A fórmula resultante, $\meta{A}(\meta{c})$, é chamada de \define{substitution instance} de $\forall \meta{x} \meta{A}$ e $\exists \meta{x} \meta{A}$.
-Além disso, $\meta{c}$ é chamado de \xdefine{nome de instanciacao}.
-
-Vejamos um exemplo.
-Considere a sentença da LPO:
-	$$\forall y \exists x (\atom{R}{y,x} \eiff \atom{F}{x})$$
-A notação recém  introduzida nos permite usar a expressão
-	$$\forall \meta{y} \atom{\meta{A}}{\meta{y}}$$
-para nos referirmos a esta sentença de um modo genérico em nossa metalinguagem.
-Quando fazemos isso, a expressão
-	$$\atom{\meta{A}}{\meta{y}}$$
-refere-se genericamente a
-	$$\exists x (\atom{R}{y,x} \eiff \atom{F}{x})$$
-que é uma fórmula com uma ocorrência livre da variável `$y$'.
-Se substituímos esta ocorrência livre de `$y$' por um nome, digamos, `$e$', obtemos a sentença:
-	$$\exists x (\atom{R}{e,x} \eiff \atom{F}{x})$$
-Esta sentença nada mais é do que uma instância de substituição de 
-	$$\forall y \exists x (\atom{R}{y,x} \eiff \atom{F}{x})$$
-onde `$e$' é o nome de instanciação, e `$y$' é a variável instanciada.
+Para implementar essa ideia geral vamos utilizar a noção de variação da denotação de $\meta{x}$.
+Vejamos algumas definições.
 
 Seja $\mathbf{I}$ o nome de uma interpretação que estejamos considerando.
-$\mathbf{I}$ inclui uma especificação de quais nomes correspondem a quais objetos no domínio.
-Considere um objeto  qualquer do domínio, digamos, $d$, e um nome $\meta{c}$ que não esteja sendo usado em $\mathbf{I}$.
+$\mathbf{I}$ inclui uma especificação de quais termos individuais correspondem a quais objetos no domínio.
+Considere um objeto  qualquer do domínio, digamos, $d$, e um termo $\meta{t}$.
 Usaremos a notação
-$$\mathbf{I}[d/\meta{c}]$$
-para nos referirmos à interpretação que é igual a $\mathbf{I}$, com um acréscimo:
-$\mathbf{I}[d/\meta{c}]$ atribui o nome $\meta{c}$ ao objeto $d$.
-Então podemos dizer que $d$ \xdefine{satisfaz} a fórmula $\meta{A}(\meta{x})$ na interpretação $\mathbf{I}$ se e somente se $\meta{A}(\meta{c})$ é verdadeira em $\mathbf{I}[d/\meta{c}]$.
+$$\mathbf{I}[d/\meta{t}]$$
+para nos referirmos à interpretação que é igual a $\mathbf{I}$, com a possível diferença no fato que 
+$\mathbf{I}[d/\meta{t}]$ atribui ao termo $\meta{t}$ a denotação $d$.
+
+Então podemos dizer que $d$ \xdefine{satisfaz} a fórmula $\meta{A}(\meta{x})$ na interpretação $\mathbf{I}$ se e somente se $\meta{A}(\meta{x})$ é verdadeira em $\mathbf{I}[d/\meta{t}]$.
 (Quando $d$ satisfaz $\meta{A}(\meta{x})$, nós dizemos também que $\meta{A}(\meta{x})$ é \emph{verdadeira de} $d$.
 
-\factoidbox{A interpretação $\mathbf{I}[d/\meta{c}]$ é igual à interpretação $\mathbf{I}$, com o acréscimo de que atribui o nome $\meta{c}$ ao objeto $d$.
+\factoidbox{A interpretação $\mathbf{I}[d/\meta{t}]$ é igual à interpretação $\mathbf{I}$, com a possível diferença no fato que atribui ao termo $\meta{t}$ a denotação $d$.
 
 \
 \\
 Um objeto $d$ \xdefine{satisfaz} $\meta{A}(\meta{x})$ na interpretação $\mathbf{I}$ \\
-\hbox{\textbf{se e somente se}} $\meta{A}(\meta{c})$ é verdadeira em $\mathbf{I}[d/\meta{c}]$.
+\hbox{\textbf{se e somente se}} $\meta{A}(\meta{x})$ é verdadeira em $\mathbf{I}[d/\meta{t}]$.
 }
 
-\noindent Assim, por exemplo, dizemos que: 
+
+\noindent Assim, por exemplo, considerando a interpretação fornecida no início do capítulo \ref{i:Sample} podemos dizer que: 
 \begin{ebullet}
 	\item Sócrates \underline{satisfaz} a fórmula `$\atom{F}{x}$'
 \end{ebullet}
 pois:
 \begin{ebullet}
-	\item $\atom{F}{c}$ é \underline{verdadeira} na interpretação $\mathbf{I}[\text{Sócrates}/c]$
+	\item $\atom{F}{x}$ é \underline{verdadeira} na interpretação $\mathbf{I}[\text{Sócrates}/x]$
 \end{ebullet}
-ou seja, $\atom{F}{c}$ é verdadeira na interpretação que obtemos de nossa interpretação original $\mathbf{I}$ (p.\pageref{i:Sample}) quando acrescentamos a indicação de que o nome `$c$' se refere a Sócrates:
+ou seja, a fórmula $\atom{F}{x}$ é verdadeira na variação da interpretação original quando especificamos que a denotação da variável $x$ é Sócrates.
 
-\begin{center}
-	\begin{ekey}
-		\item[\text{domínio}] {\small todas as pessoas (vivas ou mortas) nascidas antes do ano 2020}
-		\item[a] {\small Aristóteles}
-		\item[b] {\small Simona Talma}
-		\item[c] {\small Sócrates}
-		\item[C] {\small Simona Talma é uma artista potiguar\,}
-		\item[D] {\small é F (uma sentença falsa)}
-		\item[\atom{F}{x}] \gap{x} {\small é filósofo}
-		\item[\atom{R}{x,y}] \gap{x} {\small nasceu antes que} \gap{y}
-	\end{ekey}
-\end{center}
 
-Tendo ampliado nossa metalinguagem com estas notações, podemos finalmente definir as condições de verdade de sentenças da LPO cujo operador principal é um quantificador.
-A ideia aproximada é a seguinte.
-A sentença $\forall \meta{x}\meta{A}(\meta{x})$ será verdadeira em $\mathbf{I}$ se e somente se, para qualquer objeto $d$ no domínio, $\meta{A}(\meta{c})$ é verdadeira em $\mathbf{I}[d/\meta{c}]$.
-Ou seja, $\forall \meta{x}\meta{A}(\meta{x})$ será verdadeira  se e somente se $\meta{A}(\meta{c})$ for verdadeira, independentemente de qual objeto (no domínio) tenha sido nomeado  por $\meta{c}$.
+Tendo feitos essas definições, podemos finalmente fornecer as condições de verdade de sentenças da LPO cujo operador principal é um quantificador.
+A ideia é a seguinte.
+A sentença $\forall \meta{x}\meta{A}(\meta{x})$ será verdadeira em $\mathbf{I}$ se e somente se, para qualquer objeto $d$ no domínio, $\meta{A}(\meta{x})$ é verdadeira em $\mathbf{I}[d/\meta{x}]$.
+Ou seja, $\forall \meta{x}\meta{A}(\meta{x})$ será verdadeira  se e somente se $\meta{A}(\meta{x})$ for verdadeira, independentemente de qual objeto (no domínio) tenha sido nomeado  por $\meta{x}$.
 Em outras palavras, $\forall \meta{x} \meta{A}(\meta{x})$ é verdadeira apenas quando todos os objetos no domínio satisfazem $\meta{A}(\meta{x})$.
 
 Similarmente, a sentença $\exists \meta{x}\meta{A}(\meta{x})$ será verdadeira se e somente se houver \emph{algum} objeto no domínio que satisfaça $\meta{A}(\meta{x})$.
-Ou seja, $\exists \meta{x}\meta{A}(\meta{x})$ é verdadeira em $\mathbf{I}$ se e somente se  $\meta{A}(\meta{c})$ é verdadeira em $\mathbf{I}[d/\meta{c}]$ para pelo menos um objeto $d$.
+Ou seja, $\exists \meta{x}\meta{A}(\meta{x})$ é verdadeira em $\mathbf{I}$ se e somente se  $\meta{A}(\meta{x})$ é verdadeira em $\mathbf{I}[d/\meta{x}]$ para pelo menos um objeto $d$.
 	\factoidbox{
 		$\forall \meta{x}\meta{A}(\meta{x})$ é \underline{verdadeira} em uma interpretação \textbf{se e somente se} todo objeto no domínio \underline{satisfiaz} $\meta{A}(\meta{x})$.
 		
@@ -629,11 +473,12 @@ Ou seja, $\exists \meta{x}\meta{A}(\meta{x})$ é verdadeira em $\mathbf{I}$ se e
 		\\
 		$\exists \meta{x}\meta{A}(\meta{x})$ é \underline{verdadeira} em uma interpretação \textbf{se e somente se} pelo menos um objeto no domínio \underline{satisfaz} $\meta{A}(\meta{x})$.
 	}
-Para ficar claro: tudo o que estamos fazendo aqui é formalizar (de um modo bastante preciso) a ideia intuitiva de que para que uma sentença quantifidada universalmente seja verdadeira, todos os objetos do domínio precisam satisfazê-la; e para que uma sentença quantificada existencialmente seja verdadeira, basta que um objeto do domínio a satisfaça. 
 
 Finalmente, vale notar que o conceito de um objeto satisfazer uma fórmula com uma variável livre também pode ser estendido a fórmulas com mais de uma variável livre.
-Por exemplo, se tivermos uma fórmula $\meta{A}(\meta{x},\meta{y})$ com duas variáveis livres $\meta{x}$ e $\meta{y}$, podemos dizer que um par de objetos $\langle a, b\rangle$ satisfaz $\meta{A}(\meta{x},\meta{y})$ se e somente se $\meta{A}(\meta{c},\meta{d})$ for verdadeira na interpretação estendida por dois nomes $\meta{c}$ e $\meta{d}$, onde $\meta{c}$ é o nome de $a$ e $\meta{d}$ é o nome de $b$.
-Assim, por exemplo, $\langle \text{Sócrates}, \text{Platão}\rangle$ satisfaz $R(x,y)$, pois, já que Sócrates nasceu antes de Platão, $R(c,d)$ é verdadeiro na interpretação:
+Por exemplo, se tivermos uma fórmula $\meta{A}(\meta{x},\meta{y})$ com duas variáveis livres $\meta{x}$ e $\meta{y}$, podemos dizer que um par de objetos $\langle a, b\rangle$ satisfaz $\meta{A}(\meta{x},\meta{y})$ se e somente se $\meta{A}(\meta{x},\meta{y})$ for verdadeira na interpretação em que  $\meta{x}$ denota $a$ e $\meta{y}$ denota $b$.
+
+
+Consideremos novamente a interpretação fornecida no início do capítulo:
 \begin{center}
 	\begin{ekey}
 		\item[\text{domínio}] {\footnotesize todas as pessoas (vivas ou mortas) nascidas antes do ano 2020}
@@ -647,6 +492,8 @@ Assim, por exemplo, $\langle \text{Sócrates}, \text{Platão}\rangle$ satisfaz $
 		\item[\atom{R}{x,y}] \gap{x} {\small nasceu antes que} \gap{y}
 	\end{ekey}
 \end{center}
+
+Assim, $\langle \text{Sócrates}, \text{Platão}\rangle$ satisfaz $R(x,y)$, já que Sócrates nasceu antes de Platão
 Para fórmulas atômicas, tais como $\atom{F}{x}$ e $\atom{R}{x,y}$,  os objetos ou sequências de objetos que as satisfazem são exatamente a extensão dos predicados que as constituem.
 Mas a noção de satisfação também se aplica a fórmulas não atômicas.
 A fórmula $\atom{F}{x} \land \atom{R}{x,b}$, por exemplo, é satisfeita por todos os filósofos que nasceram antes de Simona Talma.
