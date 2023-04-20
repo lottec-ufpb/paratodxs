@@ -23,10 +23,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # Compile main document
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
           root_file: forallxyyc.tex
+        post_compile: "makeglossaries"
+        
+      # Release PDF
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: forallxyyc.pdf
+          name: ParaTodxs-${{ github.sha }}
+          body: "Arquivo PDF compilado"
