@@ -1964,14 +1964,10 @@ Se você pegar quaisquer dos símbolos da LPO e escrevê-los sequencialmente, em
 \section{Termos e fórmulas}
 \label{s:TermsFormulas}
 
-No Capítulo \ref{s:TFLSentences}, passamos direto da apresentação do vocabulário da LPC para a definição de sentença.
-Na LPO, no entanto, teremos que passar por um estágio intermediário: a noção de uma \define{formula}.
-A ideia intuitiva é que uma fórmula seja qualquer expressão que possa ser transformada em uma sentença pela adição de quantificadores à sua esquerda.
-Mas vamos com calma.
-Chegaremos lá passo a passo.
-Antes de definirmos fórmulas, precisamos  definir o que é um termo e o que é uma fórmula atômica.
+Na LPO existem dois tipos de fórmulas: fórmulas em que ocorrem variáveis não quantificadas, chamadas \emph{fórmulas abertas}, e fórmulas em que não existem variáveis não quantificadas, chamadas \emph{fórmulas fechadas}.
 
-Começamos definindo a noção de termo.
+Abaixo esses conceitos serão definidos precisamente. 
+Para tanto, precisamos definir a noção de termo.
 	\factoidbox{
 		Um \define{term} é qualquer nome ou qualquer variável. }
 Aqui estão alguns termos:
@@ -2050,50 +2046,55 @@ Abaixo uma ilustração gráfica do escopo dos quantificadores da última fórmu
 
 
 
-\section{Sentenças}
-É importante lembrarmos que o objetivo principal da lógica é avaliar se os argumentos são válidos ou não.
-E os argumentos são compostos por sentenças declarativas:
-sentenças que podem ser verdadeiras ou falsas (asserções).
-Entretanto, muitas fórmulas não são asserções.
-Considere a seguinte chave de simbolização:
+\section{Fórmulas abertas e fechadas}
+
+
+Seja o domínio de discurso constituído de pessoas e seja a seguinte chave de simbolização:
 \begin{center}
 	\begin{ekey}
-		\item[\text{domínio}] pessoas
 		\item[\atom{A}{x,y}] \gap{x} ama \gap{y}
 		\item[b] Boris
 	\end{ekey}
 \end{center}
+
 Considere, agora, a fórmula atômica `$\atom{A}{z,z}$'.
-Como todas as fórmulas atômicas são fórmulas, `$\atom{A}{z,z}$' é uma fórmula. Mas será que ela é uma asserção? Uma sentença que pode ser verdadeira ou falsa?
-Você pode pensar que ela será verdadeira caso a pessoa nomeada por `$z$' ame a si mesma, da mesma maneira que `$\atom{A}{b,b}$' é verdadeira caso Boris ame a si mesmo.
-No entanto, `$z$' não é nome de ninguém, `$z$' é uma variável.
-E, por isso, nenhuma asserção é feita com `$\atom{A}{z,z}$'.
+Essa fórmula poderia ser tomada como a formalização de uma sentença do tipo
 
-Quando, no entanto, colocamos um quantificador existencial, por exemplo, à esquerda de `$\atom{A}{z,z}$', resultando em `$\exists z \atom{A}{z,z}$', a fórmula obtida é uma asserção  que será verdadeira se alguém amar a si próprio.
+\begin{earg}
+\item[(A)] \emph{fulano} ama a si mesmo
+\end{earg}
+
+A menos que seja especificado a quem se refere o termo `fulano', (A) não é nem verdadeira nem falsa.
+Do mesmo modo, sem a atribuição de uma referência à variável $z$, a fórmula `$\atom{A}{z,z}$'  não pode ser nem verdadeira nem falsa.
+Por outro lado, ao colocamos um quantificador existencial, por exemplo, à esquerda de `$\atom{A}{z,z}$', resultando em `$\exists z \atom{A}{z,z}$', a fórmula obtida corresponde a uma asserção que será verdadeira se alguém amar a si próprio.
 Da mesma forma, com um quantificador universal obteríamos `$\forall z \atom{A}{z,z}$', que é verdadeira se todos amam a si mesmos.
-O ponto é que sempre que há variáveis em nossas fórmulas, precisamos de algum quantificador para indicar como lidar com aquela variável.
 
-Vamos tornar esta ideia mais precisa.
-	\factoidbox{
-		Uma ocorrência de uma variável \meta{x} é uma \define{ocorrencia ligada} se está dentro do escopo de $\forall \meta{x}$ ou de $\exists \meta{x}$. 
-		
-		\bigskip
-		
-		Qualquer ocorrência de variável que não seja ligada, é uma \define{ocorrencia livre}.
+Vamos dar algumas definições envolvidas nessas considerações:
+
+\factoidbox{
+	\begin{itemize}
+		\item Uma ocorrência de uma variável \meta{x} é uma \define{ocorrencia ligada} se está dentro do escopo de $\forall \meta{x}$ ou de $\exists \meta{x}$. 	
+		\item Qualquer ocorrência de variável que não seja ligada, é uma \define{ocorrencia livre}.
+                \item $\meta{A}$ é uma \define{formula aberta} quando contém variáveis livres, isto é, que não estão sob o escopo de um quantificador, caso contrário, $\meta{A}$ é uma \define{formula fechada}, ou uma \define{sentence of FOL}.
+	\end{itemize}
 	}
-        
-Considere, por exemplo, a seguinte fórmula:
+
+Assim, na fórmula:
 	$$\forall x(\atom{E}{x} \eor \atom{D}{y}) \eif \exists z(\atom{E}{x} \eif \atom{L}{z,x})$$
-O âmbito do quantificador universal `$\forall x$' é `$\forall x (\atom{E}{x} \eor \atom{D}{y})$', portanto, a primeira ocorrência de `$x$' é ligada por `$\forall x$'.
+o escopo do quantificador universal `$\forall x$' é `$\forall x (\atom{E}{x} \eor \atom{D}{y})$', portanto, a primeira ocorrência de `$x$' é ligada por `$\forall x$'.
 No entanto, a segunda e a terceira ocorrências de '$x$' (em `$\atom{E}{x}$' e em `$\atom{L}{z,x}$') são livres.
 Da mesma forma, a única ocorrência de `$y$' é livre.
 O escopo do quantificador existencial `$\exists z$' é `$(\atom{E}{x} \eif \atom{L}{z,x})$', portanto a ocorrência de `$z$' é ligada.
 
-Podemos agora, finalmente, completar a nossa definição de sentença da LPO.
-	\factoidbox{	
-		Uma \define{sentence of FOL} da LPO é qualquer fórmula que não contém ocorrências livres de variáveis.
-	}
 
+Resumindo, de modo a ser possível avaliar se certa fórmulas aberta $\meta{A}$ é verdadeira, devemos
+\begin{itemize}
+	\item ou especificar denotações para todas as ocorrências livres de variáveis $\meta{A}$.
+	\item ou quantificar todas as ocorrências livres de variáveis em $\meta{A}$
+\end{itemize}
+
+
+   
 
 \section{Convenções sobre parênteses}
 
