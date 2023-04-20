@@ -30,7 +30,6 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: forallxyyc.tex
-          post_compile: "makeglossaries forallxyyc"
         
       # Release PDF
       - name: Release
