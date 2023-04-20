@@ -38,5 +38,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: forallxyyc.pdf
-          name: ParaTodxs-${{ github.sha }}
+          name: ParaTodxs-${{ github.ref_name }}
           body: "Arquivo PDF compilado"
