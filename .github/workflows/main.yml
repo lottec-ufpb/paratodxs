@@ -40,4 +40,4 @@ jobs:
         with:
           files: forallxyyc.pdf
           name: ParaTodxs-${{ github.ref_name }}
-          body: "Arquivo PDF compilado"
+          body: "Fontes LaTeX e PDF"
