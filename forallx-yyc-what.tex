@@ -16,9 +16,14 @@
 %Um argumento, no sentido em que empregaremos aqui, é algo mais parecido com isto:
 
 O assunto da lógica é a avaliação de argumentos; a identificação dos bons argumentos, separando-os dos maus.
+Na lógica formal, o foco está na noção de validade ou consequência lógica.
+A validade é uma qualidade de argumentos nos quais a conclusão é uma consequência lógica das premissas.
 Um \define{argument} é um grupo de sentenças que exprime um raciocínio.
-Uma das sentenças, chamada de \define{conclusion}, é o ponto final do raciocínio, e corresponde àquilo que se conclui.
-As outras, chamadas de \definepl{premise}, são o ponto inicial do raciocínio e representam as informações das quais se parte para chegar à conclusão. 
+Dentre estas sentenças, uma é destacada como sendo o alvo do argumento, a \define{conclusion}.
+As outras, chamadas de \definepl{premise}, são o ponto inicial do raciocínio e representam as informações das quais se parte para chegar à conclusão.
+As \definepl{sentence} que compõem um argumento são frases declarativas que, em princípio, poderiam ser verdadeiras ou falsas.
+Observe que interrogações, interjeições, perguntas, súplicas, imperativos e ordens, dentre outras estruturas linguísticas, não serão parte daquilo que estamos chamando de \define{argument}, pois não faria sentido dizer que são verdadeiras ou falsas.
+Adotamos o termo ``sentença'', mas poderia se falar também em oração, afirmação, asserção, proposição, alegação, juízo e assim por diante.
 Um argumento, então, é algo como:
 
 	\begin{earg}\label{argButlerGardner}
@@ -36,33 +41,36 @@ Um argumento, então, é algo como:
 %É nesse tipo de coisa que os lógicos estão interessados. Diremos que um argumento é qualquer coleção de premissas, juntamente com uma conclusão.
 
 \noindent Os três pontos na terceira linha significam ``portanto'' e indicam que esta sentença é a conclusão do argumento. As duas sentenças anteriores são as premissas.
-Um argumento é considerado bom do ponto de vista lógico quando o raciocínio que parte das premissas e chega à conclusão for infalível, ou seja, quando acreditar que as premissas são verdadeiras nos dá razão suficiente para acreditar que a conclusão também é verdadeira. Sempre que isso ocorre dizemos que a conclusão se segue das premissas, ou que é uma consequência das premissas, e que o argumento é válido.
-É nesse tipo de coisa que os lógicos estão interessados; em identificar e caracterizar os argumentos válidos, ajudando-nos com isso a reconhecer os raciocínios infalíveis.  
+Um argumento é considerado válido quando o raciocínio que parte das premissas e chega à conclusão for infalível, ou seja, quando acreditar que as premissas são verdadeiras nos dá razão suficiente para acreditar que a conclusão também é verdadeira.
+Sempre que isto ocorre dizemos que a conclusão se segue das premissas, ou que é uma consequência das premissas, e que o argumento é válido.
+É disto que a lógica se ocupa; em identificar e caracterizar os argumentos válidos, ajudando-nos assim a reconhecer os raciocínios infalíveis.
 
-Os principais métodos que os lógicos desenvolveram para identificar os arugmentos válidos são métodos formais.
-Eles envolvem uma espécie de tradução das sentenças que compõem os argumentos do português para certas linguagens simbólicas muito parecidas com a linguagem da matemática.
+A infalibilidade dos raciocínios válidos está ancorada no significado de certas expressões lógicas.
+No estudo da validade, portanto, é importante abstrair do conteúdo das senteças, aquilo que não concerne as expressões lógicas, trazendo à tona assim a forma lógica dos argumentos.
+É neste sentido que a lógica é uma disciplina formal.
+Ao extrair a forma lógica de sentenças e argumentos, obtemos fórmulas de certas linguagens muito parecidas com a linguagem da matemática.
 
-Estudaremos algumas destas linguagens e métodos em detalhes no decorrer deste livro, mas antes disso vamos neste e nos próximos dois capítulos que compõem a Parte I, introduzir os principais conceitos da lógica de um modo informal.
+Estudaremos algumas dessas linguagens e métodos em detalhes no decorrer deste livro, mas antes disso vamos neste, e nos próximos dois capítulos que compõem a Parte I, introduzir os principais conceitos da lógica de um modo informal.
 A ideia é obtermos um entendimento prévio mais ou menos intuitivo das principais noções lógicas, antes de as estudarmos formalmente.
 
-É fundamental, então, começar com uma compreensão clara do que é um argumento, saber identificar quais são suas premissas e qual é sua conclusão, e entender o que  significa um argumento ser válido.
+É fundamental, então, começar com uma compreensão clara do que é um argumento, saber identificar quais são suas premissas e qual é sua conclusão, e entender o que significa um argumento ser válido.
 
 
 %A Parte I deste livro discute algumas noções lógicas básicas que se aplicam a argumentos em um idioma natural, tal como o português.
 %É fundamental começar com uma compreensão clara do que são argumentos e do que significa um argumento ser válido.
 %Mais tarde, traduziremos os argumentos do português para uma linguagem formal. Queremos que a validade formal, conforme será definida na linguagem formal, tenha pelo menos algumas das características importantes que a validade das linguagens naturais tem.
 
-No exemplo recém-apresentado, expressamos cada premissa através de uma sentença separada, e usamos uma terceira sentença para  expressar a conclusão do argumento.
+No exemplo recém-apresentado, expressamos cada premissa através de uma oração separada, e usamos uma terceira oração para  expressar a conclusão do argumento.
 %Muitos argumentos são expressos dessa maneira, mas uma única sentença também pode conter um argumento completo.
-Apesar de muitos argumentos serem expressos dessa maneira, pode ocorrer também de uma única sentença conter um argumento completo. 
+Apesar de muitos argumentos serem expressos dessa maneira, pode ocorrer também de uma única oração conter um argumento completo. 
 Considere:
 	\begin{quote}
 		O mordomo tem um álibi, logo não foi ele.
 	\end{quote}
 %Este argumento tem uma premissa seguida de uma conclusão.
-Identificamos um argumento nesta sentença, porque identificamos nela um raciocínio. Parte-se da premissa de que o mordomo tem um álibi e conclui-se que não foi ele.
+Identificamos um argumento nesta oração, porque identificamos nela um raciocínio. Parte-se da premissa de que o mordomo tem um álibi e conclui-se que não foi ele.
 
-Muitos argumentos começam com as premissas e terminam com uma conclusão, mas nem todos.
+Muitos argumentos começam com as premissas e terminam com a conclusão, mas nem todos.
 O argumento inicial desta seção poderia igualmente ter sido apresentado com a conclusão no início, da seguinte forma:
 	\begin{quote}
 		Foi o jardineiro. Afinal, ou foi o mordomo, ou o jardineiro. E não foi o mordomo.
@@ -71,7 +79,8 @@ O mesmo argumento também poderia ter sido apresentado com a conclusão no meio:
 	\begin{quote}
 		Não foi o mordomo. Consequentemente foi o jardineiro, dado que ou foi o mordomo, ou o jardineiro.
 	\end{quote}
-O importante aqui é percebermos que um texto qualquer será um argumento sempre que ele for a expressão de um raciocínio, onde chega-se a uma conclusão a partir de uma ou mais premissas. 
+Frequentemente, consideraremos os argumentos numa forma padronizada, com as premissas primeiro e a conclusão ao final.
+Independente desta ordem, porém, o importante aqui é percebermos que um dicurso qualquer será um argumento sempre que ele for a expressão de um raciocínio, no qual uma conclusão é sustentada por uma ou mais premissas. 
 
 Para avaliar um argumento e saber se o raciocínio que ele expressa é infalível, ou seja, se sua conclusão se segue ou não de suas premissas, é claro que a primeira coisa a fazer é identificar a conclusão e separá-la das premissas.
 %Então, a primeira coisa a fazer é identificar a conclusão e separá-la das premissas.
@@ -86,7 +95,7 @@ Por outro lado, as expressões abaixo são \definepl{premise indicator word}, da
 		porque\\ visto que\\ desde que\\ dado que\\ uma vez que\\ afinal\\ afinal de contas\\ pois\\ assuma que\\ é sabido que\\ por causa de
 	\end{center}
 As expressões indicativas de conclusão tanto quanto as indicativas de premissa apenas nos dão uma pista.
-O fundamental é ter em mente que a conclusão é sempre aquilo que se quer dizer, a ``moral da história'' que corresponde ao ponto final do raciocínio; já as premissas sempre são uma justificativa ou explicação da conclusão, são as informações das quais se parte para chegar à conclusão. 
+O fundamental é ter em mente que a conclusão é sempre aquilo que se quer alcançar, a ``moral da história'' que corresponde ao alvo do raciocínio; já as premissas sempre são uma justificativa ou explicação da conclusão, são as informações que suportam a conclusão. 
 
 \section{Sentenças}
 \label{intro.sentences}
@@ -109,25 +118,25 @@ Mas as sentenças da lógica também podem expressar coisas que nos parecem mais
 Estas expressões de opinião também são sentenças legítimas, no sentido lógico que estamos adotando aqui.
 Em outras palavras, uma sentença não é desqualificada como parte legítima de um argumento só porque não sabemos se ela é verdadeira ou falsa, nem porque sua verdade ou falsidade é uma questão de opinião.
 Não importa se sabemos, nem mesmo se é possível ou não saber se a sentença é verdadeira ou falsa.
-Se a sentença for do tipo que pode ser verdadeira ou falsa, então ela será uma sentença em nossa acepção lógica  e pode desempenhar o papel de premissa ou conclusão e fazer parte de um argumento lógico.
+Se a sentença for do tipo que pode ser verdadeira ou falsa, então ela será uma sentença em nossa acepção lógica, e pode portanto desempenhar o papel de premissa ou conclusão e fazer parte de um argumento.
 Essas sentenças, sobre as quais cabe julgar se são verdadeiras ou falsas, são conhecidas como \emph{sentenças declarativas}.
 
-Por outro lado, há expressões que seriam consideradas sentenças por um linguista ou gramático, mas que não são sentenças declarativas e portanto, não contam como sentenças na lógica, tais como:
+Por outro lado, há expressões que seriam consideradas sentenças, ou frases, por um linguista ou gramático, mas que não são sentenças declarativas e portanto, não contam como sentenças na lógica, tais como:
 
-\paragraph{Perguntas \ --}Em uma aula de gramática, a expressão `Você já está com sono?'  contaria como uma sentença interrogativa. Mas ainda que você esteja mesmo sonolento, a pergunta em si não será verdadeira por causa disso.
+\paragraph{Perguntas \ --}Em uma aula de gramática, a expressão ``Você já está com sono?''  contaria como uma sentença interrogativa. Mas ainda que você esteja mesmo sonolento, a pergunta em si não será verdadeira por causa disso.
 Perguntas, em geral, não fazem declarações e por isso não são nem verdadeiras nem falsas e não contam como sentenças na lógica.
 Elas não podem fazer parte de um argumento nem como premissas nem como conclusões.
 Se, por exemplo, você disser ``não estou com sono'' em resposta à pergunta acima, sua resposta será uma sentença no sentido lógico, porque diferentemente da pergunta, ela é do tipo que pode ser verdadeira ou falsa.
 Geralmente, \emph{perguntas} não contam como sentenças, mas \emph{respostas} contam.
 
-`Sobre o que é este curso?' não é uma sentença (no nosso sentido).
-Por outro lado, `Ninguém sabe sobre o que este curso trata' é uma sentença.
+``Sobre o que é este curso?'' não é uma sentença (no nosso sentido).
+Por outro lado, ``Ninguém sabe sobre o que este curso trata'' é uma sentença.
 
 \paragraph{Imperativos \ --}As ordens costumam ser formuladas como imperativos tais como ``Acorde!'', ``Sente-se direito'' e assim por diante.
 Em uma aula de gramática, isso contaria como sentenças imperativas.
 Ainda que seja aconselhável sentar-se com a coluna ereta, a ordem não será verdadeira ou falsa por causa disso.
 Observe, no entanto, que as ordens ou comandos nem sempre são expressos como imperativos.
-Por exemplo, a expressão `Você respeitará minha autoridade' \emph{é} ou verdadeira ou falsa, pois você respeitará ou não.
+Por exemplo, a expressão ``Você respeitará minha autoridade'' \emph{é} ou verdadeira ou falsa, pois você respeitará ou não.
 Então, estritamente falando, trata-se de uma sentença no sentido lógico, ainda que consigamos perceber que por trás desta declaração há uma intenção de dar uma ordem.
 
 \paragraph{Exclamações \ --}Expressões como `Ai!' às vezes são chamadas de sentenças exclamatórias.
@@ -137,7 +146,7 @@ O `ai' não acrescenta nada que possa alterar a verdade ou falsidade da sentenç
 
 
 \practiceproblems
-No final da maioria dos capítulos há uma seção com exercícios que ajudam a revisar e explorar o material abordado no capítulo.
+No final da maioria dos capítulos há uma seção com exercícios que ajudam a revisar e explorar o material abordado.
 Fazer estes exercícios é parte essencial e insubstituível do seu aprendizado.
 Aprender lógica é como aprender a falar uma língua estrangeira, ou aprender a jogar tênis, ou a tocar piano.
 Não basta ler e entender a teoria.
@@ -177,16 +186,15 @@ Pode-se até dizer que a lógica, enquanto um campo do conhecimento, investiga o
 Ela é constituída por teorias e ferramentas que nos apontam quando uma sentença se segue de outras.
 
 Pois bem, voltemos ao argumento principal apresentado no Capítulo \ref{s:Arguments}: 
-
 	\begin{earg}
 		\item[] Ou foi o mordomo, ou foi o jardineiro.
 		\item[] Não foi o mordomo.
 		\item[\therefore] Foi o jardineiro.
 	\end{earg}
 Não sabemos a que, exatamente, estas sentenças se referem.
-Talvez você suspeite que ``foi'' signifique ``foi o autor de algum crime'' não especificado.
+Talvez você suspeite que ``foi'' signifique ``foi o autor de algum crime não especificado''.
 Podemos imaginar, por exemplo, que este argumento tenha sido dito por um detetive que estivesse considerando as evidências de um crime em um livro de mistério ou em uma série de TV.
-Mas mesmo sem ter qualquer dessas informações, você provavelmente concorda que o argumento é bom no sentido de que, independentemente de a que exatamente as premissas se referem, se elas forem ambas verdadeiras, a conclusão não pode deixar de ser verdadeira também.
+Mas mesmo sem ter qualquer dessas informações, você provavelmente concorda que o argumento é bom no sentido de que, independentemente do significado exato das sentenças, se as premissas forem ambas verdadeiras, a conclusão não pode deixar de ser verdadeira também.
 Se a primeira premissa for verdadeira, ou seja, se for verdade que ``ou foi o mordomo, ou foi o jardineiro'', então pelo menos um deles ``foi'', seja lá o que ``foi'' signifique.
 E se a segunda premissa também for verdadeira, não ``foi'' o mordomo.
 Isso deixa apenas uma opção: ``foi o jardineiro''. Esta sentença, a conclusão, deve ser verdadeira.
@@ -194,7 +202,7 @@ Então, neste caso, a conclusão se segue das premissas.
 Um argumento que possui essa propriedade é chamado de \define{valid}.
 
 Um argumento, então, é \emph{válido}, quando em qualquer situação na qual suas premissas são verdadeiras, sua conclusão também é.
-Nós sabemos que o argumento do mordomo e do jardineiro é válido porque mesmo sem saber exatamente do que as sentenças estão falando, podemos ver que em qualquer situação na qual as duas premissas forem verdadeiras, a conclusão também será.
+Nós sabemos que o argumento do mordomo e do jardineiro é válido porque, mesmo sem saber exatamente do que as sentenças estão falando, podemos ver que em qualquer situação na qual as duas premissas forem verdadeiras, a conclusão também será.
 
 Considere, agora, o seguinte argumento:
 \begin{earg}\label{argMaidDriver}
@@ -206,12 +214,12 @@ Aqui também não temos ideia do que, especificamente, está sendo dito.
 No entanto, você provavelmente concorda que esse argumento é diferente do anterior em um aspecto importante.
 Mesmo que suas premissas sejam ambas verdadeiras, não é garantido que a conclusão também será.
 Aceitar as premissas desse argumento como verdadeiras não descarta a possibilidade de que foi outra pessoa diferente da babá e do motorista.
-É, portanto, perfeitamente possível que estas sentenças estejam se referindo a uma situação na qual  ambas as premissas são verdadeiras e, no entanto, não foi o motorista.
-Nesta situação as premissas são verdadeiras, mas a conclusão não é.
-Então, neste segundo argumento, a conclusão não segue das premissas.
+É, portanto, perfeitamente possível que estas sentenças estejam se referindo a uma situação na qual ambas as premissas são verdadeiras e, no entanto, não foi o motorista.
+Nesta situação, as premissas seriam verdadeiras, mas a conclusão não.
+Então, neste segundo argumento, a conclusão não se segue das premissas.
 Chamamos de \define{invalid} qualquer argumento em que, como este, a conclusão não se segue das premissas.
 
-Um argumento é, então, inválido, quando suas sentenças podem estar se referindo a uma situação na qual todas as premissas são verdadeiras, mas a conclusão não é.
+Portanto, um argumento é inválido quando suas sentenças podem estar se referindo a uma situação na qual todas as premissas são verdadeiras, mas a conclusão não é.
 Nós sabemos que o argumento do motorista e da babá é inválido porque há situações específicas às quais as sentenças do argumento podem estar se referindo, nas quais as premissas são verdadeiras, mas a conclusão é falsa.
 Uma destas situações ocorre quando, por exemplo, ``foi'' significa ``foi a última pessoa a deixar a mansão na noite de ontem'', e quando, além disso, ontem, a última pessoa que deixou a mansão foi o jardineiro.
 Como o jardineiro foi o último a deixar a mansão ontem, então a conclusão, que diz que foi o motorista, é falsa, e a segunda premissa, que diz que não foi a babá, é verdadeira.
@@ -222,13 +230,13 @@ Então, há uma situação onde as duas premissas do argumento são verdadeiras,
 \section{Situações e tipos de validade}
 \label{ss:Validade}
 
-Nosso reconhecimento da invalidade do argumento do motorista e da babá foi obtido pela proposição de uma situação na qual as premissas do argumento são verdadeiras, mas a conclusão não é.
-Chamamos uma situação como esta, que prova a invalidade de um argumento, de \define{counterexample} do argumento.
-Sempre que um argumento possui algum contraexemplo, a conclusão não poderá ser uma consequência das premissas.
-Para que a conclusão seja uma consequência das premissas, a verdade das premissas deve garantir a verdade da conclusão. Quando há um contraexemplo, a verdade das premissas não garante a verdade da conclusão.
+Reconhecemos a invalidade do argumento anterior ao conceber uma situação na qual as premissas do argumento seriam verdadeiras, mas a conclusão não.
+Chamamos uma situação como esta, que prova a invalidade de um argumento, de \define{counterexample} ao argumento.
+Sempre que um argumento admite algum contraexemplo, a conclusão não é uma consequência das premissas.
+Para que a conclusão seja uma consequência das premissas, a verdade das premissas deve garantir a verdade da conclusão. Contudo, quando há um contraexemplo, a verdade das premissas não garante a verdade da conclusão.
 
 Enquanto lógicos, queremos poder determinar quando a conclusão de um argumento decorre das premissas.
-E a conclusão será uma consequência das premissas se não houver contraexemplo: uma situação (ou caso) em que as premissas são todas verdadeiras, mas a conclusão não é.
+E a conclusão será uma consequência das premissas quando for impossível conceber uma situação na qual as premissas são todas verdadeiras, mas a conclusão não é.
 Diante disso, podemos propor a seguinte definição:
 
 %	\factoidbox{
@@ -240,34 +248,23 @@ Diante disso, podemos propor a seguinte definição:
 
 Repare que  afirmar que  $A$ é consequência de $B_1$, \dots, $B_n$ é apenas um outro modo de dizer que o argumento que tem $B_1$, \dots, $B_n$ como premissas e \ $A$ como conclusão é válido.
 
-Mas essa ``definição'' ainda está incompleta. Ela não nos diz o que é uma ``situação'' ou o que significa ser ``verdadeiro em uma situação''.
+Mas esta ``definição'' ainda está incompleta.
+Ela não nos diz o que é uma ``situação'' ou o que significa ser ``verdadeiro em uma situação''.
 Até agora, vimos apenas um exemplo:
-um cenário hipotético envolvendo três pessoas, um motorista, uma babá e um jardineiro; nesse cenário, não foi o motorista nem a babá. Foi o jardineiro. Nesse cenário, conforme vimos, as premissas do nosso segundo argumento são verdadeiras, mas a conclusão não é:
+um cenário hipotético envolvendo três pessoas, um motorista, uma babá e um jardineiro; neste cenário, não foi o motorista nem a babá. Foi o jardineiro. Neste cenário, conforme vimos, as premissas do nosso segundo argumento são verdadeiras, mas a conclusão não é:
 o cenário é um contraexemplo.
 
-Dissemos que os argumentos cujas conclusões são consequências das premissas são válidos, enquanto aqueles cujas conclusões não são consequências das premissas são inválidos.
-Como já apresentamos uma primeira aproximação de uma definição de consequência, vamos utilizá-la para registrar as definições de argumento válido e inválido:
-
-	\factoidbox{
-		Um argumento é \define{valid} se e somente se a conclusão é uma consequência das premissas.
-	}
-
-	\factoidbox{
-		Um argumento é \define{invalid} se e somente se ele não é válido, ou seja, se ele possui um contraexemplo.
-	}
-
-A principal tarefa dos lógicos é tornar esta noção de ``situação'' mais precisa e investigar em que medida diferentes modos de tornar mais precisa a noção de ``situação'' afetam quais argumentos serão classificados como válidos e quais não serão. 
-Se, por exemplo, considerarmos que uma ``situação'' é um ``cenário hipotético'', tal como o do contraexemplo do argumento do motorista e da babá, fica claro que o primeiro argumento, o do mordomo e do jardineiro, será classificado como válido.
-Isso porque em qualquer cenário que imaginarmos no qual ou foi o mordomo, ou foi o jardineiro (ou seja, no qual a primeira premissa é verdadeira) e no qual, além disso, não foi o mordomo (a segunda premissa também é verdadeira), neste cenário, inevitavelmente, foi o jardineiro (a conclusão é verdadeira).
+É importante tornar esta noção de ``situação'' mais precisa e investigar em que medida diferentes modos de tornar mais precisa a noção de ``situação'' afetam quais argumentos serão classificados como válidos e quais não serão. 
+Se, por exemplo, considerarmos que uma situação é um cenário hipotético, tal como o do contraexemplo do argumento do motorista e da babá, fica claro que o primeiro argumento, o do mordomo e do jardineiro, será classificado como válido.
+Isto porque em qualquer cenário que imaginarmos no qual ou foi o mordomo, ou foi o jardineiro (ou seja, no qual a primeira premissa é verdadeira) e no qual, além disso, não foi o mordomo (a segunda premissa também é verdadeira), neste cenário, inevitavelmente, foi o jardineiro (a conclusão é verdadeira).
 Qualquer cenário hipotético em que as premissas de nosso primeiro argumento sejam verdadeiras, a conclusão, inevitavelmente, também será verdadeira.
-Isso torna nosso primeiro argumento válido.
 
 Tornar a noção de ``situação'' mais específica, interpretando-a como ``cenário hipotético'' é um avanço.
 Mas não é o fim da história.
 O primeiro problema é que não sabemos o que pode e o que não pode ser considerado como um cenário hipotético.
 Os cenários hipotéticos são limitados pelas leis da física?
 São eles obrigados a serem compatíveis com nossos conceitos e o modo como estes se relacionam uns com os outros?
-Quais os limites para o que é aceitável que seja considerado como um cenário hipotético?
+Quais são os cenários hipotéticos aceitáveis?
 Respostas diferentes a estas perguntas levarão a diferentes modos de separar os argumentos em válidos e inválidos.
 
 Suponha, por exemplo, que os cenários hipotéticos sejam limitados pelas leis da física.
@@ -277,7 +274,7 @@ Considere, então, o seguinte argumento:
 		\item[] A espaçonave \emph{Rocinante} levou seis horas na viagem entre a estação espacial Tycho e o planeta Júpiter.
 		\item[\therefore] A distância entre a estação espacial Tycho e Júpiter é menor do que 14~bilhões de quilômetros.
 	\end{earg}
-Um contraexemplo para esse argumento seria um cenário hipotético em que a nave \emph{Rocinante} faz uma viagem de mais de 14 bilhões de quilômetros em 6 horas, excedendo, assim, a velocidade da luz.
+Um contraexemplo para este argumento seria um cenário hipotético em que a nave \emph{Rocinante} faz uma viagem de mais de 14 bilhões de quilômetros em 6 horas, excedendo, assim, a velocidade da luz.
 Mas esse cenário é incompatível com as leis da física, já que de acordo com elas nada pode exceder a velocidade da luz.
 Então, se aceitarmos nossa suposição de que os cenários hipotéticos devem respeitar as leis da física, não conseguiremos produzir nenhum contraexemplo a este argumento, que será, por isso, considerado válido.
 Por outro lado, se os cenários hipotéticos puderem desafiar as leis da física, então é fácil propor um no qual a premissa deste argumento é verdadeira e a conclusão é falsa.
@@ -301,7 +298,6 @@ Estes dois casos nos dão uma primeira e importante lição sobre a lógica.
 Eles mostram que a lógica e suas noções principais, tais como a validade e a consequência, não é anterior, separada ou prioritária em relação a outros domínios, tais como o domínio da realidade natural e das leis da natureza, e o domínio dos conceitos e significados das sentenças.
 O modo como entendermos e concebermos estes outros domínios poderá interferir e alterar nosso entendimento sobre se um argumento é válido ou não.
 
-
 \section{Validade Formal}
 
 Uma característica distintiva da consequência \emph{lógica} é que ela não deve depender do conteúdo das premissas e conclusões, mas apenas de sua forma lógica.
@@ -318,7 +314,7 @@ e
 	\item[] Jussara não é uma dentista.
 	\item[\therefore] Jussara é uma oftalmologista.
 \end{earg}
-são argumentos válidos. Mas enquanto a validade do primeiro depende do conteúdo (ou seja, o significado de ``oftalmologista'' e ``oculista''), a validade do segundo não depende disso.
+são argumentos válidos, num sentido amplo. Mas enquanto a validade do primeiro depende do conteúdo (ou seja, o significado de ``oftalmologista'' e ``oculista''), a validade do segundo não depende disso.
 O segundo argumento é \define{formalmente valido}.
 Podemos descrever a ``forma'' desse argumento através de um padrão mais ou menos assim:
 \begin{earg}
@@ -353,15 +349,15 @@ Mas eis aqui um outro argumento com esta mesma forma:
 Este argumento claramente não é válido, uma vez que podemos imaginar uma situação em que uma matemática chamada Edna  não é  trapezista nem  bióloga.
 Nesta situação as duas premissas são verdadeiras, mas a conclusão não é, e o argumento, por isso, não é válido.
 
-Nossa estratégia, enquanto lógicos, será a de apresentar uma noção de ``situação'' na qual um argumento se torne válido se ele for formalmente válido.
-Claramente, essa noção de ``situação'' violará não apenas algumas leis da natureza, mas algumas regras da língua portuguesa.
+Enquanto lógicos, nossa estratégia para obter contraexemplos será apresentar uma noção de ``situação'' na qual um argumento careça de contraexemplos se, e somente se, ele for formalmente válido.
+Para tanto, devem ser admitidas situações que violam não apenas leis da natureza, mas também regras da língua portuguesa.
 Como o primeiro argumento desta seção é inválido nesse sentido formal, devemos admitir como contraexemplo uma situação em que Jussara é uma oftalmologista, mas não uma oculista.
-Esta situação não é conceitualmente concebível: ela é descartada pelos significados de ``oftalmologista'' e ``oculista''.
+Porém, esta situação não é conceitualmente concebível: ela é descartada pelos significados de ``oftalmologista'' e ``oculista''.
 
 Faremos algumas suposições sobre os diversos tipos diferentes de situações que admitiremos na análise da validade de um argumento.
 A primeira suposição é que toda situação admissível tem que ser capaz de determinar a verdade ou não de cada sentença do argumento em consideração.
-Isso significa, em primeiro lugar, que não será aceito como uma situação admissível para um possível contraexemplo, qualquer cenário imaginário no qual a verdade de alguma sentença do argumento considerado não seja determinada.
-Por exemplo, um cenário em que Jussara é dentista, mas não oftalmologista, contará como uma situação a ser considerada nos primeiros argumentos desta seção, mas não como uma situação a ser considerada nos últimos dois argumentos:
+Isso significa, em primeiro lugar, que não será aceito como contraexemplo, qualquer cenário imaginário no qual a verdade de alguma sentença do argumento considerado não seja determinada.
+Por exemplo, um cenário circunscrito em que nada mais está determinado além de que Jussara é dentista, mas não oftalmologista, contará como uma situação a ser considerada nos primeiros argumentos desta seção, mas não como uma situação a ser considerada nos últimos dois argumentos:
 este cenário nada nos diz sobre se Edna é matemática, bióloga ou trapezista.
 Se uma situação não determina que uma sentença é verdadeira, diremos que ela determina que a sentença é \define{false}.
 Assumiremos, então, que as situações determinam a verdade ou a falsidade das sentenças, mas nunca ambas.\footnote{
@@ -415,7 +411,7 @@ Primeiro, precisamos que o argumento seja válido, ou seja, precisamos que a con
 E segundo, precisamos também que as premissas sejam verdadeiras.
 Diremos que um argumento válido com todas as suas premissas verdadeiras é um argumento \definepl{soundness}.
 
-Em contrapartida, quando queremos refutar um argumento, temos duas opções à disposição: podemos mostrar que uma (ou mais) premissas não são verdadeiras, ou podemos mostrar que o argumento não é válido.
+Em contrapartida, quando queremos resistir a conclusão de um argumento, temos duas opções à disposição: podemos mostrar que uma (ou mais) premissas não são verdadeiras, ou podemos mostrar que o argumento não é válido.
 A lógica, no entanto, só nos ajuda na segunda opção!
 
 
@@ -428,7 +424,7 @@ Muitos argumentos bons são inválidos. Considere o seguinte:
 \end{earg}
 Esse argumento faz uma generalização baseada na observação sobre muitas situações (passadas) e conclui sobre todas as situações (futuras).
 Tais argumentos são chamados argumentos \definepl{indutivo}.
-No entanto, este argumento é inválido.
+No entanto, este argumento é logicamente inválido.
 Mesmo que jamais tenha nevado em Natal até agora, permanece \emph{possível} que 
 uma onda súbita de frio e umidade chegue a Natal no próximo inverno e neve na cidade.
 Essa situação configura um cenário hipotético bastante implausível, mas ainda assim possível, em que a premissa do argumento é verdadeira, mas sua conclusão não é, o que caracteriza o argumento como inválido.
@@ -459,7 +455,7 @@ Quais argumentos a seguir são válidos? Quais são inválidos?
 
 \item
 	\begin{earg}
-		\item[]  Lula nasceu em Porto Alegre ou foi presidente do Brasil.
+		\item[] Lula nasceu em Porto Alegre ou foi presidente do Brasil.
 		\item[] Lula nunca foi presidente do Brasil.
 		\item[\therefore] Lula nasceu em Porto Alegre.
 	\end{earg}
@@ -529,7 +525,7 @@ Considere estas duas sentenças:
 A lógica não consegue, sozinha, nos dizer qual dessas frases é verdadeira.
 No entanto, é evidente que \emph{se} a primeira sentença (B1) for verdadeira, \emph{então} a segunda (B2) deve ser falsa.
 Da mesma forma, se a segunda (B2) for verdadeira, então a primeira (B1) deve ser falsa.
-Não há cenário possível em que ambas as sentenças sejam verdadeiras juntas.
+Fixados os significados de ``baixo'' e ``alto'', não há cenário possível em que ambas as sentenças sejam verdadeiras juntas.
 Essas sentenças são incompatíveis entre si, não podem ser ambas verdadeiras ao mesmo tempo.
 Isso motiva a seguinte definição:
 
@@ -554,7 +550,7 @@ Por exemplo, considere as seguintes quatro sentenças:
 G1 e G4 juntas implicam que há pelo menos quatro girafas marcianas no zoológico de Natal.
 E isso entra em conflito com o G3, que afirma não haver mais de dois marcianos no zoológico de Natal.
 Portanto, as sentenças G1, G2, G3, G4 são incompatíveis.
-Não há situação na qual todas elas sejam verdadeiras. 
+Fixado o significado dos números, não há situação na qual todas elas sejam verdadeiras. 
 (Observe que as sentenças G1, G3 e G4, sem G2, já são incompatíveis.
 E se elas são incompatíveis, adicionar uma sentença extra ao grupo, como G2, não resolverá esta incompatibilidade!)
 
