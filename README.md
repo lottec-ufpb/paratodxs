@@ -1,14 +1,14 @@
 # ParaTodxs
 
 [![Build
-Status](https://github.com/lottec-ufpb/paratodxs/actions/workflows/main.yml/badge.svg)](https://github.com/lottec-ufpb/paratodxs/actions/workflows/main.yml)
+Status](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
 
 ## Descrição
 
 _ParaTodxs_ é um livro didático de introdução à lógica formal.
 Dentre os temas abordados está a lógica proposicional clássica, a lógica de predicados clássica em primeira ordem, e uma breve introdução à lógica modal. 
 
-A última versão está [disponível em PDF](https://github.com/lottec-ufpb/paratodxs/releases/latest/download/forallxyyc.pdf).
+A última versão está [disponível em PDF](../../releases/latest/download/forallxyyc.pdf).
 
 ## LoTTec
 
