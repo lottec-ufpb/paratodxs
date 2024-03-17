@@ -17,7 +17,7 @@ Para mais informações sobre esta funcionalidade, consulte o [guia oficial](htt
 
 Caso você já tenha alguma familiaridade com o Git e/ou GitHub, você pode solicitar diretamente que uma alteração seja incorporada no ramo principal do repositório.
 Após revisada e/ou aprovada por algum membro do grupo, será incorporada ao projeto.
-É recomendável que a solicitação venha acompanhada de um breve arazoado da proposta de alteração.
+É recomendável que a solicitação venha acompanhada de um breve arrazoado da proposta de alteração.
 
 ## Bifurcar o ParaTodxs
 
@@ -25,7 +25,7 @@ A principal vantagem de materiais didáticos livres é a possibilidade de deriva
 
 Num livro didático tradicional, com "todos os direitos reservados", somos forçados a conviver com suas imperfeições, mudar para outro livro didático (possivelmente com outras imperfeições), ou escrever algo do zero.
 Com o ParaTodxs, você pode simplesmente reescrever as partes que não agradam e distribuir sua versão livremente.
-Versões distintas podem ser sucitadas não apenas por perspectivas didáticas distintas, mas também pelo público alvo: um curso de lógica para a matemática pode se beneficiar de ênfases diferentes de um curso para a computação ou a filosofia. 
+Versões distintas podem ser suscitadas não apenas por perspectivas didáticas distintas, mas também pelo público alvo: um curso de lógica para a matemática pode se beneficiar de ênfases diferentes de um curso para a computação ou a filosofia. 
 
 Nós buscamos facilitar que versões derivadas sejam mantidas como bifurcações deste repositório.
 *Por exemplo*, não é necessária qualquer alteração para que a funcionalidade de compilação do PDF seja usada por bifurcações.
