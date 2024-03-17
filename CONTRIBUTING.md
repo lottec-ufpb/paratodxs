@@ -7,8 +7,8 @@ Confira as [instruções oficiais](https://docs.github.com/pt/get-started/start-
 
 ## Abrir uma questão (*issue*)
 
-Caso você tenha identificado algum erro ou gostaria de propor alguma melhoria, a maneira mais simples é abrir uma questão.
-Preencha o modelo com a sua sugestão.
+Caso você tenha identificado algum erro ou gostaria de propor alguma melhoria, a maneira mais simples é [abrir uma questão](../../issues/new/choose).
+Preencha o modelo apropriado com a sua sugestão.
 Após avaliar a sugestão, um membro do grupo efetuará a alteração (com menção ao autor(a) da sugestão), caso pertinente.
 
 Para mais informações sobre esta funcionalidade, consulte o [guia oficial](https://docs.github.com/pt/issues/tracking-your-work-with-issues/about-issues).
