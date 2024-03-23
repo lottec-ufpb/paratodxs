@@ -32,6 +32,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: forallxyyc.tex
+	  args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -pretex=\\def\\ghrepo{$GITHUB_SERVER_URL/$GITHUB_REPOSITORY}\\def\\ghversion{$GITHUB_REF_NAME}
         
       # Release PDF
       - name: Release

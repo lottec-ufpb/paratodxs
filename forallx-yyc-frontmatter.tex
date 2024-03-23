@@ -42,15 +42,14 @@
 
 \parbox{3 in}{
 	
-Esta é a versão de \mydate{} de um livro que provavelmente nunca será considerado acabado.
+Esta é a versão \ifthenelse{\isundefined{\ghversion}}{ de \mydate{}}{\ghversion} de um livro que provavelmente nunca será considerado acabado.
 Ele é baseado no \href{https://github.com/Grupo-de-Estudos-em-Logica-da-UFRN/Para-Todxs-Natal}{\emph{Para Todxs: Natal}}, mantido pelo Grupo de Estudos em Lógica da UFRN, o qual, por sua vez, é baseado no \href{https://github.com/rzach/forallx-yyc}{\emph{Forall x: Calgary}}, mantido por Richard Zach.
-Em \hbox{\url{https://github.com/lottec-ufpb/paratodxs}} estão todas as fontes \LaTeX{} e indicações de como obter a versão PDF mais recente.
-
+\ifthenelse{\isundefined{\ghrepo}}{\par}{Visite o \href{\ghrepo}{repositório} para obter os arquivos \LaTeX{}, um histórico das modificações e talvez uma versão PDF mais recente.\par}
 
 Esta obra é distribuída sob a licença \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons \hbox{Attribution 4.0}}. 
 Você é livre para copiar e redistribuir este material em qualquer meio ou formato, remixar, transformar e desenvolvê-lo para qualquer finalidade, mesmo comercialmente, nos seguintes termos:
 \begin{itemize}
-\item Você deve dar o crédito apropriado, fornecer um link para a licença e indicar se foram feitas alterações. Você pode fazê-lo de qualquer maneira razoável, mas não de maneira que sugira que os licenciantes (os demais autores) endossam você ou seu uso.
+\item Você deve atribuir autoria quando apropriado, fornecer uma referência para a licença e indicar se foram feitas alterações. Você pode fazê-lo de qualquer maneira razoável, mas não de maneira que sugira que os licenciantes (os demais autores) endossam você ou seu uso.
 \item Você não pode aplicar termos legais ou medidas tecnológicas que restrinjam legalmente outras pessoas a fazer o que a licença permite.
 \end{itemize}
 	}

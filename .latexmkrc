@@ -36,3 +36,6 @@
 #       if ($silent) { unshift @args, "-q"; }
 #       return system "makeindex", @args;
 #   }
+
+# Pass Pre TeX commands to the engines for compilation
+&alt_tex_cmds;

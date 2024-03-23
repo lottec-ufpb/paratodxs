@@ -13,7 +13,7 @@ A última versão está [disponível em PDF](../../releases/latest/download/fora
 ## LoTTec
 
 O livro _Paratodxs_ é mantido com apoio dos membros do grupo de pesquisa [LoTTec: Lógica — Teorias e Técnicas](https://lottec.pontofixo.net.br) da Universidade Federal da Paraíba.
-Para relatar erros ou fazer sugestões, consulte as [instruções sobre como contribuir](../../blob/main/CONTRIBUTING.md).
+Sinta-se livre para [apontar erros ou fazer sugestões](../../issues/new/choose). Para mais detalhes, consulte as [instruções sobre como colaborar](../../blob/main/CONTRIBUTING.md).
 
 ## Créditos e Licença
 
