@@ -37,5 +37,6 @@
 #       return system "makeindex", @args;
 #   }
 
-# Pass Pre TeX commands to the engines for compilation
+# Pass repository and version information to LaTeX
 &alt_tex_cmds;
+$pre_tex_code="\\def\\ghrepo{$ENV{GITHUB_SERVER_URL}/$ENV{GITHUB_REPOSITORY}}\\def\\ghversion{$ENV{GITHUB_REF_NAME}}"
