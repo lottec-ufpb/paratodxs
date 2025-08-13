@@ -39,6 +39,7 @@ jobs:
         with:
           name: forallxyyc.pdf
           path: forallxyyc.pdf
+          compression-level: 0
         
       # Release PDF
       - name: Release
