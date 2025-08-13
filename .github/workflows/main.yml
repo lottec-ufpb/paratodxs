@@ -29,13 +29,20 @@ jobs:
 
       # Compile main document
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: forallxyyc.tex
+
+      # Retain PDF a couple of days for inspection
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: forallxyyc.pdf
+          path: forallxyyc.pdf
         
       # Release PDF
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: forallxyyc.pdf

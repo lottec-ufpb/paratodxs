@@ -19,7 +19,7 @@ e este outro também:
 		\item[] Se Márcia é uma sindicalista anarquista, então Sílvio é um ávido leitor de Tolstoy.
 		\item[\therefore] Sílvio é um ávido leitor de Tolstoy.
 	\end{earg}
-Ambos os argumentos são válidos e não é difícil notar que eles compartilham uma estrutura comum, que pode ser expressada assim:
+Ambos os argumentos são válidos e não é difícil notar que eles compartilham uma estrutura ou forma comum, em conformidade com a Seção \ref{ss:ValidadeFormal}, que pode ser expressada assim:
 	\begin{earg}
 		\item[] $A$
 		\item[] Se $A$, então $C$
@@ -81,7 +81,7 @@ Considere agora este outro argumento:
 		\item[] A escultura é toda verde.
 		\item[\therefore] A escultura não é toda vermelha. 
 	\end{earg}
-Novamente, parece impossível que a premissa seja verdadeira e a conclusão falsa, pois nada pode ser todo verde e todo vermelho.
+Novamente, parece impossível que a premissa seja verdadeira e a conclusão falsa, pois nada pode ser todo verde e todo vermelho ao mesmo tempo.
 Portanto, o argumento é válido.
 Mas aqui está um argumento inválido com esta mesma forma:
 	\begin{earg}
@@ -370,6 +370,7 @@ O uso dos parênteses tem o propósito de distinguir situações como estas e aj
 
 
 \section{Disjunção}
+\label{s:ConnectiveDisjunction}
 
 Considere as seguintes sentenças:
 	\begin{earg}
@@ -877,7 +878,7 @@ A cláusula básica pode ser assim especificada:
 	\end{ebullet}
 a regra para geração de novos elementos e o fechamento são dados pelas seguintes cláusulas:
 	\begin{ebullet}
-		\item Se $x$ is meu acestral, então os pais de $x$ são meus ancestrais.
+		\item Se $x$ é meu acestral, então os pais de $x$ são meus ancestrais.
 		\item Nada além do estabelecido por estas cláusulas é meu ancestral.
 	\end{ebullet}
 Usando essa definição, podemos facilmente verificar se alguém é ou não meu ancestral:
@@ -923,7 +924,7 @@ Mas se você tiver dúvidas sobre qual é o conectivo principal de alguma senten
 Não aplique este método em sentenças nas quais parênteses foram omitidos ou substituídos através das convenções que veremos na próxima Seção!)
 
 Considere, por exemplo, a sentença
-$$((A \eor B) \eand C))$$
+$$((A \eor B) \eand C)$$
 Ela não começa com uma negação, então é preciso fazer a contagem dos parênteses para aplicar o método.
 Se marcarmos cada símbolo de parênteses com o número da contagem obtemos:
 $$(^1 (^2 A \eor B)^1 \eand C)^0$$
