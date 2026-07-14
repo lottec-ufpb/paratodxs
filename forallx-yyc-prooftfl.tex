@@ -1808,23 +1808,48 @@ Finalmente, um argumento é  \xdefine{DEDUTIVAMENTE VALIDO NA LPC} \label{def:sy
 
 \begin{sidewaystable}\small
 \tabulinesep=1ex
-\begin{tabu}{X[.5,c,m] ||X[1,l,m] |X[1,l,m]}
-\textbf{Conceito} 		&	\textbf{Definição (semântica): tabela de verdade} 	&	\textbf{ Definição  (sintática):  teoria da prova} \\ \hline \hline
+\begin{tabular}{>{\centering\arraybackslash}p{0.14\textwidth}||p{0.40\textwidth}|p{0.40\textwidth}}
+\hline
+\textbf{Conceito} &
+\textbf{Definição (semântica): tabela de verdade} &
+\textbf{Definição (sintática): teoria da prova} \\
+\hline\hline
 
-Tautologia  &	Uma sentença cuja tabela de verdade só tem Vs sob o conectivo principal  & Uma sentença que pode ser derivada sem nenhuma premissa	 \\ \hline
- 
-Contradição		&	Uma sentença cuja tabela de verdade só tem Fs sob o conectivo principal  &	Uma sentença cuja negação pode ser derivada sem quaisquer premissas\\ \hline
+Tautologia &
+Uma sentença cuja tabela de verdade só tem Vs sob o conectivo principal &
+Uma sentença que pode ser derivada sem nenhuma premissa \\
+\hline
 
-Sentença contingente	&	Uma sentença cuja tabela de verdade contém Vs e Fs sob o  conectivo principal & Uma sentença que não é um teorema nem uma contradição \\ \hline
+Contradição &
+Uma sentença cuja tabela de verdade só tem Fs sob o conectivo principal &
+Uma sentença cuja negação pode ser derivada sem quaisquer premissas \\
+\hline
 
-Sentenças equivalentes  &	As colunas sob os conectivos principais são idênticas & As sentenças podem ser derivadas uma da outra	\\ \hline
+Sentença contingente &
+Uma sentença cuja tabela de verdade contém Vs e Fs sob o conectivo principal &
+Uma sentença que não é um teorema nem uma contradição \\
+\hline
 
-Sentenças  insatisfatórias / inconsistentes	&	Sentenças que não possuem uma única linha na tabela de verdade, onde todas são verdadeiras	& Sentenças a partir das quais se pode derivar uma contradição \\ \hline
+Sentenças equivalentes &
+As colunas sob os conectivos principais são idênticas &
+As sentenças podem ser derivadas uma da outra \\
+\hline
 
-Sentenças  satisfatórias  / consistentes	&	Sentenças que tenham pelo menos uma linha na tabela de verdade onde elas todas são verdadeiras & Sentenças  a partir das quais não se pode derivar uma contradição.	\\ \hline
+Sentenças insatisfatórias / inconsistentes &
+Sentenças que não possuem uma única linha na tabela de verdade onde todas são verdadeiras &
+Sentenças a partir das quais se pode derivar uma contradição \\
+\hline
 
-Argumento válido 		&	Um argumento cuja tabela de verdade não tem  nenhuma linha  na qual  tem Vs sob todos os conectivos principais das premissas e F sob o conectivo principal da conclusão  & Um argumento em que se pode derivar a conclusão a partir das premissas	\\ 
-\end{tabu}
+Sentenças satisfatórias / consistentes &
+Sentenças que tenham pelo menos uma linha na tabela de verdade onde elas todas são verdadeiras &
+Sentenças a partir das quais não se pode derivar uma contradição. \\
+\hline
+
+Argumento válido &
+Um argumento cuja tabela de verdade não tem nenhuma linha na qual tem Vs sob todos os conectivos principais das premissas e F sob o conectivo principal da conclusão &
+Um argumento em que se pode derivar a conclusão a partir das premissas \\
+\hline
+\end{tabular}
 \caption{Duas maneiras de definir conceitos lógicos.}
 \label{table:truth_tables_or_derivations}
 \end{sidewaystable}
@@ -1866,16 +1891,43 @@ A tabela \ref{table.ProofOrModel} resume quando é melhor usar provas e quando �
 
 \begin{table}[H]\scriptsize
 \tabulinesep=1ex
-\begin{tabu}{X[.7,c,m] ||X[1,l,m] |X[1,l,m]}
-\textbf{Propriedade lógica} 	&	\textbf{Para provar que está presente} 	&	\textbf{Para provar que está ausente} \\ \hline \hline
-Ser um teorema  &  Derivar a sentença 	& Encontrar uma linha falsa na tabela de verdade para a sentença \\ \hline
-Ser uma contradição  &  Derivar a negação da sentença   &  Encontrar uma linha verdadeira na tabela de verdade para a sentença\\ \hline
-Contingência 			&  Encontrar uma linha falsa e uma linha verdadeira na tabela de verdade para a sentença & Provar a sentença ou sua negação \\ \hline
+\begin{tabular}{>{\centering\arraybackslash}p{0.18\textwidth}||p{0.34\textwidth}|p{0.34\textwidth}}
+\hline
+\textbf{Propriedade lógica} &
+\textbf{Para provar que está presente} &
+\textbf{Para provar que está ausente} \\
+\hline\hline
 
-Equivalência	& Derivar cada sentença da outra 	 & Encontrar uma linha na tabelas de verdade  para a sentença onde elas tenham valores diferentes\\ \hline
-Consistência		& Encontrar uma linha na tabela de verdade para a sentença em que todas elas são verdadeiras & Derivar uma contradição das sentenças\\ \hline
-Validade				&  Derivar a conclusão a partir das premissas & Encontrar uma linha na tabela de verdade onde as premissas são todas verdadeiras e a conclusão é falsa. \\ 
-\end{tabu}
+Ser um teorema &
+Derivar a sentença &
+Encontrar uma linha falsa na tabela de verdade para a sentença \\
+\hline
+
+Ser uma contradição &
+Derivar a negação da sentença &
+Encontrar uma linha verdadeira na tabela de verdade para a sentença \\
+\hline
+
+Contingência &
+Encontrar uma linha falsa e uma linha verdadeira na tabela de verdade para a sentença &
+Provar a sentença ou sua negação \\
+\hline
+
+Equivalência &
+Derivar cada sentença da outra &
+Encontrar uma linha na tabela de verdade para a sentença onde elas tenham valores diferentes \\
+\hline
+
+Consistência &
+Encontrar uma linha na tabela de verdade para a sentença em que todas elas são verdadeiras &
+Derivar uma contradição das sentenças \\
+\hline
+
+Validade &
+Derivar a conclusão a partir das premissas &
+Encontrar uma linha na tabela de verdade onde as premissas são todas verdadeiras e a conclusão é falsa. \\
+\hline
+\end{tabular}
 \caption{Quando fornecer uma tabela de verdade e quando fornecer uma prova.}
 \label{table.ProofOrModel}
 \end{table}
