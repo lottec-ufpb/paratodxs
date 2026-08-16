@@ -8,7 +8,7 @@
 
 No  Capítulo  \ref{s:Valid}, dissemos que um argumento é válido se e somente se não existe nenhuma situação na qual todas as premissas são verdadeiras e a conclusão é falsa. Posteriormente,  apresentamos as tabelas de verdade para as sentenças da LPC, onde  cada linha de uma tabela completa corresponde a uma valoração. Assim, diante de um argumento da LPC,  temos um modo direto para asserir se existe uma valoração na qual as premissas são todas verdadeiras e a conclusão falsa, isto é, apenas averiguando as tabelas de verdade. 
 
-Entretanto, tabelas de verdade não nos dão necessariamente muito  \emph{insight}. Considere os dois seguintes argumentos na LPC:
+Entretanto, tabelas de verdade não são necessariamente muito esclarecedoras. Considere os dois seguintes argumentos na LPC:
 \begin{align*}
 P \eor Q, \enot P & \therefore Q\\
 P \eif Q, P & \therefore Q
@@ -86,7 +86,7 @@ e esperamos concluir com alguma linha $n$:
 \begin{fitchproof}
 	\have[n]{con}{\enot C \eor D}
 \end{fitchproof}
-  Tudo que resta a fazer é explicar cada uma das regras que podemos usar ao longo do caminho entre as premissas e a conclusão.  As regras são  discriminadas gradativamente  (broken down) por nossos conectivos lógicos. 
+  Tudo que resta a fazer é explicar cada uma das regras que podemos usar ao longo do caminho entre as premissas e a conclusão.  As regras são  discriminadas gradativamente por nossos conectivos lógicos.
 
  %%%%%% -----------------------------------------------26.2 Reiteracao 
 \section{Reiteração}
@@ -142,7 +142,7 @@ De maneira mais geral, aqui está  a nossa regra de introdução da  conjunção
 	\have[n]{b}{\meta{B}}
 	\have[\ ]{c}{\meta{A}\eand\meta{B}} \ai{a, b}
 \end{fitchproof}}
-Para ser claro, o enunciado da regra é esquemático.  Isto não é propriamente uma prova,      `$\meta{A}$'  e `$\meta{B}$'  não são sentenças da LPC, mas símbolos da metalinguagem, que usamos quando queremos falar sobre qualquer sentenca da LPC (veja Capítulo \ref{s:UseMention}). 
+Para ser claro, o enunciado da regra é esquemático.  Isto não é propriamente uma prova,      `$\meta{A}$'  e `$\meta{B}$'  não são sentenças da LPC, mas símbolos da metalinguagem, que usamos quando queremos falar sobre qualquer sentença da LPC (veja Capítulo \ref{s:UseMention}).
 
 Similarmente,  `$m$' e `$n$' não são numerais  que irão aparecer em uma prova real. Eles também são símbolos da metalinguagem, os quais usamos quando queremos falar sobre qualquer numero de linha  de uma prova. Em uma  prova real, as linhas  são numeradas por `$1$', `$2$', `$3$', e assim por diante.  Mas quando definimos a regra, usamos variáveis   para destacar o ponto em que a regra pode ser aplicada a qualquer momento.  A regra requer somente que tenhamos ambos os conjuntos disponíveis para ser usados em qualquer parte da prova. Eles podem ser separados um do outro, e podem aparecer em qualquer ordem.
 
@@ -301,7 +301,7 @@ e desta suposição  adicional, provamos~$\meta{B}$. Neste caso, sabemos o segui
 	\end{fitchproof}}
 Pode haver tantas linhas quantas você quiser entre as linhas $i$ e $j$.  
 
-Apresentaremos uma segunda ilustração da regra $\eif$I em acão. Vamos considerar  agora o seguinte argumento:
+Apresentaremos uma segunda ilustração da regra $\eif$I em ação. Vamos considerar  agora o seguinte argumento:
 	$$P \eif Q, Q \eif R \therefore P \eif R$$
 Vamos começar listando \emph{ambas} as nossas premissas. Então, como queremos chegar a um condicional (nomeadamente `$P \eif R$'),  assumimos adicionalmente o antecedente deste condicional.
 Nossa prova começa da seguinte forma:
@@ -425,7 +425,7 @@ Aqui temos mais um caso que devemos excluir:
 \have{bcab}{B \eif C}\by{tentativa imprópria}{}
 \have [\ ]{x}{} \by{de invocar $\eif$I}{b-c2}
 \end{fitchproof}
-Aqui, estamos tentando citar uma subprova que começa na linha~$2$ e termina na linha~$5$---mas a sentença na linha~$5$ depende não apenas da suposição da linha~$2$, mas também de uma outra suposição (linha~$3$) que não descartamos no final da subprova.  A subprova iniciada na linha~$3$ ainda está aberta na linha~$5$.  Mas $\eif$I requer que a última linha da subprova seja baseada \emph{apenas} na suposião da subprova  que está sendo citada, ou seja, a subprova começando na linha~$2$ (e qualquer coisa antes dela), e não nas suposiçõees de quaisquer subprovas dentro dela. Em particular, a última linha da subprova citada não deve estar, ela mesma, dentro de uma subprova
+Aqui, estamos tentando citar uma subprova que começa na linha~$2$ e termina na linha~$5$---mas a sentença na linha~$5$ depende não apenas da suposição da linha~$2$, mas também de uma outra suposição (linha~$3$) que não descartamos no final da subprova.  A subprova iniciada na linha~$3$ ainda está aberta na linha~$5$.  Mas $\eif$I requer que a última linha da subprova seja baseada \emph{apenas} na suposição da subprova  que está sendo citada, ou seja, a subprova começando na linha~$2$ (e qualquer coisa antes dela), e não nas suposições de quaisquer subprovas dentro dela. Em particular, a última linha da subprova citada não deve estar, ela mesma, dentro de uma subprova
 aninhada.
 
 
@@ -452,14 +452,14 @@ Um último ponto a enfatizar: onde uma regra exige que você cite uma linha indi
 \have[7]{bcab}{B \eif C}\ci{b-c3}
 \end{fitchproof}
 Aqui, tentamos justificar `$C$' na linha~$6$ com a regra de reiteração, mas citamos a subprova das linhas $3$--$5$. Esta subprova está fechada e pode, em princípio, ser citada na linha 6.  (Por exemplo, poderíamos usá-la para justificar 
- `$C \eif C$' por $\eif$I.) Porém,  a regra de reiteração~R exige que você cite uma linha individual, assim, é inadmissível citar a subprova inteira (mesmo que essa subprova  contenha a sentança~`$C$'  que queremos reiterar).
+ `$C \eif C$' por $\eif$I.) Porém,  a regra de reiteração~R exige que você cite uma linha individual, assim, é inadmissível citar a subprova inteira (mesmo que essa subprova  contenha a sentença~`$C$'  que queremos reiterar).
 
  
 
 é sempre permitido abrir uma subprova com qualquer suposição.  No entanto, existem algumas estratégias envolvidas na escolha eficiente de uma suposição.
 Iniciar uma subprova com uma suposição arbitrária e maluca apenas desperdiçaria as linhas da prova.  A fim de obter um condicional usando a regra {\eif}I, por exemplo, você deve assumir o antecedente do condicional em uma subprova.
 
-Igualmente, é sempre permitido fechar uma subprova (e descartar suas suposições). No entanto, não será útil fazê-lo até que você alcance algo eficiente.  Depois que a subprova for fechada, você poderá citar a subprova inteira em qualquer justificativa.  As regras aplicadas a uma subprova ou subprovas, por sua vez, exigem que  a última linha da subprova seja uma sentença de uma forma ou de outra.   Por exemplo, você só pode citar uma subprova para $\eif$I se a linha que você está justificando é da forma $\meta{A} \eif \meta{B}$, $\meta{A}$  é a suposião de sua subprova, e $\meta{B}$ é a útima linha da sua subprova.
+Igualmente, é sempre permitido fechar uma subprova (e descartar suas suposições). No entanto, não será útil fazê-lo até que você alcance algo eficiente.  Depois que a subprova for fechada, você poderá citar a subprova inteira em qualquer justificativa.  As regras aplicadas a uma subprova ou subprovas, por sua vez, exigem que  a última linha da subprova seja uma sentença de uma forma ou de outra.   Por exemplo, você só pode citar uma subprova para $\eif$I se a linha que você está justificando é da forma $\meta{A} \eif \meta{B}$, $\meta{A}$  é a suposição de sua subprova, e $\meta{B}$ é a última linha da sua subprova.
 
 %%%%%% ---------------------------------------------------------- 26.6   Biconditional 
 
@@ -520,7 +520,7 @@ e
 
  
 
-Observe que $\meta{B}$ pode ser \emph{qualquer} sentença, então a seguir temos uma prova perfeitamente aceit\' avel: 
+Observe que $\meta{B}$ pode ser \emph{qualquer} sentença, então a seguir temos uma prova perfeitamente aceitável:
 \begin{fitchproof}
 	\hypo{m}{M}
 	\have{mmm}{M \eor ([(A\eiff B) \eif (C \eand D)] \eiff [E \eand F])}\oi{m}
@@ -532,7 +532,8 @@ Observamos que a tabela de verdade para mostrar isso teria 128 linhas.
 A regra da eliminação da disjunção é, no entanto, um pouco mais complicada. Vamos supor que  Louis é reservado ou leal.  O que você pode concluir? Caso  Louis  não seja reservado; pode ser que ele seja leal.   Igualmente, caso  Louis  não seja leal, pode ser que ele seja reservado.  Disjunções, por si sós, são difíceis de trabalhar.
 
 Mas suponha que, de alguma forma, possamos mostrar os dois seguinte fatos: primeiro, que sendo Louis reservado implica que ele seja um economista; segundo, que sendo Louis leal implica que ele seja um economista.
-Então, se sabemos que Louis é reservado ou leal, então sabemos que, seja ele o que for, Louis é um economista.   Esse insight pode ser expresso na regra a seguir, que é a regra de eliminação da disjunção  ($\eor$E):
+Então, se sabemos que Louis é reservado ou leal, então sabemos que, seja ele o que for, Louis é um economista.
+Essa sacada pode ser expressa na regra a seguir, que é a regra de eliminação da disjunção  ($\eor$E):
 \factoidbox{
 	\begin{fitchproof}
 		\have[m]{ab}{\meta{A}\eor\meta{B}}
@@ -546,8 +547,8 @@ Então, se sabemos que Louis é reservado ou leal, então sabemos que, seja ele 
 		\close
 		\have[ ]{c}{\meta{C}}\oe{ab, a-c1,b-c2}
 	\end{fitchproof}}
-Obviamente, isso é um pouco mais complicado do que as regras anteriores, mas o argumento é bastante simples. Suponha que temos uma disjunção, $\meta{A} \eor \meta{B}$. Suponha também que temos duas subprovas, mostrando que $\meta{C}$ segue da suposição $\meta{A}$, e que $\meta{C}$ segue da suposição $\meta{B}$. Então podemos deduzir o póprio $\meta{C}$. 
- Como sempre, pode haver  tantas linhas quantas  você quiser entre   $i$ e $j$,   e tantas linhas quantas você quiser entre $k$ e $l$. Além disso, as subprovas e a disjunção podem vir em qualquer ordem e não precisam ser vizinhas.
+Obviamente, isso é um pouco mais complicado do que as regras anteriores, mas o argumento é bastante simples. Suponha que temos uma disjunção, $\meta{A} \eor \meta{B}$. Suponha também que temos duas subprovas, mostrando que $\meta{C}$ segue da suposição $\meta{A}$, e que $\meta{C}$ segue da suposição $\meta{B}$. Então podemos deduzir o próprio $\meta{C}$.
+Como sempre, pode haver  tantas linhas quantas  você quiser entre   $i$ e $j$,   e tantas linhas quantas você quiser entre $k$ e $l$. Além disso, as subprovas e a disjunção podem vir em qualquer ordem e não precisam ser vizinhas.
 
 Alguns exemplos podem ajudar a ilustrar isso. Considere este argumento:
 $$(P \eand Q) \eor (P \eand R) \therefore P$$
@@ -1164,7 +1165,7 @@ Agora temos algo a partir do qual trabalhar: a suposição  `$\enot(A \eor \enot
 \end{fitchproof}
 
 
-No início, trabalhando  do começo par o fim para provar `$A \eor\enot A$' com a regra $\eor$I não funcionou. Mas agora estamos em uma situação diferente: queremos provar `$A \eor\enot A$' dentro de uma subprova. Em geral, ao lidar com novas metas, devemos voltar e começar com as estratégias básicas. Nesse caso, devemos primeiro tentar trabalhar do fim para o começo a partir da disjunção `$A \eor \enot A$', ou seja, precisamos escolher um dos disjuntos  e tentar prová-lo. Vamos escolher~`$\enot A$'. Isso permitiria justificar `$A \eor \enot A$' na linha~$m - 1$ usando $\eor$I. Então, trabalhando novamente de fim para o começo a partir de `$\enot A$', iniciamos outra subprova a fim de justificar  `$\enot A$' usando $\enot$I. Essa subprova deve ter `$A$' acomo suposição e~`$\ered$' como sua última linha.
+No início, trabalhando  do começo par o fim para provar `$A \eor\enot A$' com a regra $\eor$I não funcionou. Mas agora estamos em uma situação diferente: queremos provar `$A \eor\enot A$' dentro de uma subprova. Em geral, ao lidar com novas metas, devemos voltar e começar com as estratégias básicas. Nesse caso, devemos primeiro tentar trabalhar do fim para o começo a partir da disjunção `$A \eor \enot A$', ou seja, precisamos escolher um dos disjuntos  e tentar prová-lo. Vamos escolher~`$\enot A$'. Isso permitiria justificar `$A \eor \enot A$' na linha~$m - 1$ usando $\eor$I. Então, trabalhando novamente de fim para o começo a partir de `$\enot A$', iniciamos outra subprova a fim de justificar  `$\enot A$' usando $\enot$I. Essa subprova deve ter `$A$' como suposição e~`$\ered$' como sua última linha.
 \begin{fitchproof}
 	\open
 	\hypo{2}{\enot (A \eor \enot A)}
@@ -1291,7 +1292,7 @@ e
 Como usual, a disjunção e a negação de um dos disjuntos podem ocorrer em qualquer ordem e não precisam ser vizinhos. No entanto, sempre citamos a disjunção primeiro.
 
  %%%%%% ----------------------------------  28.2 Modus tollens   ---------------------
-\section{Modus tollens}
+\section{\emph{Modus tollens}}
 Outro padrão  útil de inferência é incorporado no seguinte argumento:
 	\begin{quote}
 		Se Carlos venceu a eleição, ele está em Natal. Ele não está em Natal. Portanto ele não venceu a eleição.
@@ -1334,7 +1335,7 @@ Essa linha de pensamento motiva a seguinte regra:
 		\close
 		\have[\ ]{ab}{\meta{B}}\tnd{a-c1,b-c2}
 	\end{fitchproof}}
- Essa regra   é  às vezes   chamada lei do  \emph{terceiro excluído}, pois encapsula a ideia de que \meta{A} pode ser verdadeira ou $\enot \meta{A}$ pode ser verdadeira, mas não há meio caminho em que nenhum dos dois seja verdadeira.\footnote{Você pode às vezes encontrar lógicos ou filósofos falando sobre "tertium non datur". Esse é o mesmo princípio que o terceiro excluído; significa "não há terceira via". Lógicos que têm dúvidas sobre provas indiretas também têm dúvidas sobre a LEM.} Pode haver tantas linhas quantas você quiser entre $i$ e $j$, e tantas linhas quantas quiser entre $k$ e $l$.  Além disso, as subprovas podem vir em qualquer ordem, e a segunda subprova não precisa vir imediatamente após a primeira.
+ Essa regra   é  às vezes   chamada lei do  \emph{terceiro excluído}, pois encapsula a ideia de que \meta{A} pode ser verdadeira ou $\enot \meta{A}$ pode ser verdadeira, mas não há meio caminho em que nenhum dos dois seja verdadeira.\footnote{Você pode às vezes encontrar lógicos ou filósofos falando sobre \emph{tertium non datur}. Esse é o mesmo princípio que o terceiro excluído; significa "não há terceira via". Lógicos que têm dúvidas sobre provas indiretas também têm dúvidas sobre a LEM.} Pode haver tantas linhas quantas você quiser entre $i$ e $j$, e tantas linhas quantas quiser entre $k$ e $l$.  Além disso, as subprovas podem vir em qualquer ordem, e a segunda subprova não precisa vir imediatamente após a primeira.
 
 Para ver a regra em ação, considere:
  
@@ -1617,7 +1618,7 @@ Agora você deseja, na linha~$k$, provar $\meta{B}$. Você pode fazer isso com a
 A regra DS, igualmente, pode ser derivada de nossas regras mais básicas. Adicioná-la ao nosso sistema não possibilitou novas provas. Sempre  que você usar a regra DS, você pode provar a mesma coisa usando algumas linhas extras aplicando apenas as nossas regras básicas. Assim, DS é uma regra \emph{derivada}.
 
 %%%%%% ——— - - - ————  30.3  Derivacao de Modus Tollens  ----- - - ---  -- - - 
-\section{Derivação de Modus Tollens}
+\section{Derivação de \emph{Modus Tollens}}
 Suponha que você tenha o seguinte em sua prova:
 \begin{fitchproof}
 	\have[m]{ab}{\meta{A}\eif\meta{B}}
