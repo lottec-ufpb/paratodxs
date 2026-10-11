@@ -7,7 +7,7 @@
 \chapter[Extensionalidade]{Extensionali- dade}\label{s:Interpretations}
 
 Na lógica proposicional clássica (LPC), todos os conectivos são verofuncionais, ou seja, são funções de verdade.
-Dizer que um conecitvo da LPC, a conjunção (\eand) por exemplo, é uma função de verdade, é dizer algo análogo ao que os matemáticos dizem quando afirmam que a adição ($+$) é uma função numérica.
+Dizer que um conectivo da LPC, a conjunção (\eand) por exemplo, é uma função de verdade, é dizer algo análogo ao que os matemáticos dizem quando afirmam que a adição ($+$) é uma função numérica.
 A adição é uma função numérica porque ela leva números em números através de uma operação.
 Por exemplo, em  `$2+3$', a adição ($+$) toma dois números como argumentos (o $2$ e o $3$) e através de uma operação os leva a um número (o $5$) que é o resultado da adição de $2$ com $3$.
 Suponha agora que `$A$' é verdadeira e `$B$' é falsa. A conjunção `$A\eand B$' faz algo análogo ao exemplo da adição.
@@ -284,7 +284,7 @@ Vimos ali que uma interpretação é composta por:
 	\item um domínio do discurso;
 	\item uma atribuição (direta ou indireta) de valores de verdade para cada letra sentencial;
 	\item a definição de uma referência, no domínio, para cada nome e para cada variável;
-	\item a definição (dierta ou indireta) de uma extensão para cada predicado e relação.
+	\item a definição (direta ou indireta) de uma extensão para cada predicado e relação.
 \end{ebullet}
 Uma interpretação nos fornece tudo o que precisamos para decidir se uma fórmula qualquer da LPO é verdadeira ou falsa.
 Entender como utilizar interpretações para classificar as fórmulas da LPO como verdadeiras ou falsas é o primeiro passo para conseguirmos avaliar argumentos na LPO, e será nossa tarefa neste capítulo.
@@ -467,7 +467,7 @@ Em outras palavras, $\forall \meta{x} \meta{A}(\meta{x})$ é verdadeira apenas q
 Similarmente, a sentença $\exists \meta{x}\meta{A}(\meta{x})$ será verdadeira se e somente se houver \emph{algum} objeto no domínio que satisfaça $\meta{A}(\meta{x})$.
 Ou seja, $\exists \meta{x}\meta{A}(\meta{x})$ é verdadeira em $\mathbf{I}$ se e somente se  $\meta{A}(\meta{x})$ é verdadeira em $\mathbf{I}[d/\meta{x}]$ para pelo menos um objeto $d$.
 	\factoidbox{
-		$\forall \meta{x}\meta{A}(\meta{x})$ é \underline{verdadeira} em uma interpretação \textbf{se e somente se} todo objeto no domínio \underline{satisfiaz} $\meta{A}(\meta{x})$.
+		$\forall \meta{x}\meta{A}(\meta{x})$ é \underline{verdadeira} em uma interpretação \textbf{se e somente se} todo objeto no domínio \underline{satisfaz} $\meta{A}(\meta{x})$.
 		
 		\
 		\\
@@ -752,7 +752,7 @@ Vamos tentar:
 	\begin{center}
 	\begin{ekey}
 		\item[\text{domínio}] Karl Marx, Pelé
-		\item[\atom{G}{x}] \gap{x} é co-autor de `O Manifesto Comunista'
+		\item[\atom{G}{x}] \gap{x} é coautor de `O Manifesto Comunista'
 		\item[a] Pelé
 	\end{ekey}
 	\end{center}
@@ -932,10 +932,10 @@ Mas para mostrar que uma sentença é uma validade, não é suficiente propor de
 Uma sentença é uma validade apenas se for verdadeira em \emph{todas} as interpretações; e há infinitas delas.
 Precisamos ser capazes de raciocinar sobre todas elas, e não conseguiremos fazer isso lidando com elas uma de cada vez!
 
-Raciocinar sobre todas as infinitas interpetações pode soar uma tarefa impossível.
+Raciocinar sobre todas as infinitas interpretações pode soar uma tarefa impossível.
 Mas não é.
 Algumas vezes nem  é tão complicado.
-Veja como podemos mostar que a sentença \mbox{`$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$'} é uma validade:
+Veja como podemos mostrar que a sentença \mbox{`$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$'} é uma validade:
 	\begin{quote}
 		\label{allmodels1}
 		Qualquer interpretação relevante (ou seja que leve em consideração a relação `$R$' e o nome `$a$') atribui um valor de verdade à sentença `$\atom{R}{a,a}$', que será verdadeira ou falsa.
@@ -994,7 +994,7 @@ Para mostrar isso temos que raciocinar da seguinte maneira:
 		Considere uma interpretação arbitrária na qual a premissa `$\forall x(\atom{H}{x} \eand \atom{J}{x})$' seja verdadeira.
 		Segue-se que `$\atom{H}{x} \eand \atom{J}{x}$' é satisfeita por todos os objetos nesta interpretação.
 		Então `$\atom{H}{x}$' também será satisfeita por todos os objetos.\footnote{
-			Aqui, novamente, fazemos uso do fato de que qualquer objeto que satisfaça $\meta{A}(\meta{x}) \land \meta{B}(\meta{x})$ deve satisfazer a $\meta{A}(\meta{x})$ and $\meta{B}(\meta{x})$.
+			Aqui, novamente, fazemos uso do fato de que qualquer objeto que satisfaça $\meta{A}(\meta{x}) \land \meta{B}(\meta{x})$ deve satisfazer a $\meta{A}(\meta{x})$ e $\meta{B}(\meta{x})$.
 		}
 		Logo, `$\forall x\, \atom{H}{x}$' deve ser verdadeira nesta interpretação.
 		Como a única coisa que assumimos sobre a interpretação é que nela `$\forall x(\atom{H}{x} \eand \atom{J}{x})$' é verdadeira, então, a mesma conclusão deve valer para qualquer outra interpretação que satisfaça a mesma condição.
